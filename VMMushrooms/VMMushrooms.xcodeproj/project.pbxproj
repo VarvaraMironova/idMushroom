@@ -7,6 +7,102 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D731D5A923A17A0B00EAC764 /* amanita_citrina5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5A523A17A0B00EAC764 /* amanita_citrina5.jpg */; };
+		D731D5AA23A17A0B00EAC764 /* amanita_muscaria5.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D731D5A623A17A0B00EAC764 /* amanita_muscaria5.JPG */; };
+		D731D5AB23A17A0B00EAC764 /* morchella6.png in Resources */ = {isa = PBXBuildFile; fileRef = D731D5A723A17A0B00EAC764 /* morchella6.png */; };
+		D731D5AC23A17A0B00EAC764 /* amanita_citrina4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5A823A17A0B00EAC764 /* amanita_citrina4.jpg */; };
+		D731D5B023A17A2C00EAC764 /* amanita_citrina1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D731D5AD23A17A2B00EAC764 /* amanita_citrina1.JPG */; };
+		D731D5B123A17A2C00EAC764 /* amanita_citrina3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D731D5AE23A17A2C00EAC764 /* amanita_citrina3.JPG */; };
+		D731D5B223A17A2C00EAC764 /* amanita_citrina2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D731D5AF23A17A2C00EAC764 /* amanita_citrina2.JPG */; };
+		D731D5CA23A17B5C00EAC764 /* pleurotus3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5B323A17B5B00EAC764 /* pleurotus3.jpg */; };
+		D731D5CB23A17B5C00EAC764 /* morchella7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5B423A17B5B00EAC764 /* morchella7.jpg */; };
+		D731D5CC23A17B5C00EAC764 /* boletus_aereus2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5B523A17B5B00EAC764 /* boletus_aereus2.jpg */; };
+		D731D5CD23A17B5C00EAC764 /* morchella_steppicola1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5B623A17B5B00EAC764 /* morchella_steppicola1.jpg */; };
+		D731D5CE23A17B5C00EAC764 /* morchella3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5B723A17B5B00EAC764 /* morchella3.jpg */; };
+		D731D5CF23A17B5C00EAC764 /* morchella5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5B823A17B5B00EAC764 /* morchella5.jpg */; };
+		D731D5D023A17B5C00EAC764 /* boletus2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5B923A17B5C00EAC764 /* boletus2.jpg */; };
+		D731D5D123A17B5C00EAC764 /* amanita_pantherina1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5BA23A17B5C00EAC764 /* amanita_pantherina1.jpg */; };
+		D731D5D223A17B5C00EAC764 /* boletus_aereus6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5BB23A17B5C00EAC764 /* boletus_aereus6.jpg */; };
+		D731D5D323A17B5C00EAC764 /* amanita_pantherina2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5BC23A17B5C00EAC764 /* amanita_pantherina2.jpg */; };
+		D731D5D423A17B5C00EAC764 /* morchella2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5BD23A17B5C00EAC764 /* morchella2.jpg */; };
+		D731D5D523A17B5C00EAC764 /* boletus_aereus5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5BE23A17B5C00EAC764 /* boletus_aereus5.jpg */; };
+		D731D5D623A17B5C00EAC764 /* boletus_aereus4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5BF23A17B5C00EAC764 /* boletus_aereus4.jpg */; };
+		D731D5D723A17B5C00EAC764 /* boletus4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5C023A17B5C00EAC764 /* boletus4.jpg */; };
+		D731D5D823A17B5C00EAC764 /* boletus3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5C123A17B5C00EAC764 /* boletus3.jpg */; };
+		D731D5D923A17B5C00EAC764 /* morchella1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5C223A17B5C00EAC764 /* morchella1.jpg */; };
+		D731D5DA23A17B5C00EAC764 /* boletus_aereus3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5C323A17B5C00EAC764 /* boletus_aereus3.jpg */; };
+		D731D5DB23A17B5C00EAC764 /* morchella4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5C423A17B5C00EAC764 /* morchella4.jpg */; };
+		D731D5DC23A17B5C00EAC764 /* pleurotus1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5C523A17B5C00EAC764 /* pleurotus1.jpg */; };
+		D731D5DD23A17B5C00EAC764 /* amanita_pantherina3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5C623A17B5C00EAC764 /* amanita_pantherina3.jpg */; };
+		D731D5DE23A17B5C00EAC764 /* boletus1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5C723A17B5C00EAC764 /* boletus1.jpg */; };
+		D731D5DF23A17B5C00EAC764 /* amanita_pantherina4.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D731D5C823A17B5C00EAC764 /* amanita_pantherina4.JPG */; };
+		D731D5E023A17B5C00EAC764 /* pleurotus2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5C923A17B5C00EAC764 /* pleurotus2.jpg */; };
+		D731D5E423A17DB100EAC764 /* amanita_phalloides3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5E123A17DB100EAC764 /* amanita_phalloides3.jpg */; };
+		D731D5E523A17DB100EAC764 /* amanita_phalloides4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5E223A17DB100EAC764 /* amanita_phalloides4.jpg */; };
+		D731D5E623A17DB100EAC764 /* amanita_phalloides2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5E323A17DB100EAC764 /* amanita_phalloides2.jpg */; };
+		D731D5EC23A17EF800EAC764 /* amanita_rubescens2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5E723A17EF700EAC764 /* amanita_rubescens2.jpg */; };
+		D731D5ED23A17EF800EAC764 /* amanita_rubescens1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5E823A17EF800EAC764 /* amanita_rubescens1.jpg */; };
+		D731D5EE23A17EF800EAC764 /* amanita_rubescens4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5E923A17EF800EAC764 /* amanita_rubescens4.jpg */; };
+		D731D5EF23A17EF800EAC764 /* amanita_rubescens5.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D731D5EA23A17EF800EAC764 /* amanita_rubescens5.JPG */; };
+		D731D5F023A17EF800EAC764 /* amanita_rubescens3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5EB23A17EF800EAC764 /* amanita_rubescens3.jpg */; };
+		D731D60423A1850700EAC764 /* auricularia_judae1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5F123A1850600EAC764 /* auricularia_judae1.jpg */; };
+		D731D60523A1850700EAC764 /* сoltricia_perennis1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5F223A1850600EAC764 /* сoltricia_perennis1.jpg */; };
+		D731D60623A1850700EAC764 /* auricularia_judae2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5F323A1850600EAC764 /* auricularia_judae2.jpg */; };
+		D731D60723A1850700EAC764 /* cerioporus_squamosus2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5F423A1850600EAC764 /* cerioporus_squamosus2.jpg */; };
+		D731D60823A1850700EAC764 /* cerioporus_squamosus3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5F523A1850600EAC764 /* cerioporus_squamosus3.jpg */; };
+		D731D60923A1850700EAC764 /* auricularia_mesenterica4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5F623A1850600EAC764 /* auricularia_mesenterica4.jpg */; };
+		D731D60A23A1850700EAC764 /* auricularia_mesenterica2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5F723A1850600EAC764 /* auricularia_mesenterica2.jpg */; };
+		D731D60B23A1850700EAC764 /* auricularia_judae4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5F823A1850600EAC764 /* auricularia_judae4.jpg */; };
+		D731D60C23A1850700EAC764 /* cerioporus_squamosus4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5F923A1850600EAC764 /* cerioporus_squamosus4.jpg */; };
+		D731D60D23A1850700EAC764 /* сoltricia_perennis2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5FA23A1850600EAC764 /* сoltricia_perennis2.jpg */; };
+		D731D60E23A1850700EAC764 /* auricularia_judae6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5FB23A1850600EAC764 /* auricularia_judae6.jpg */; };
+		D731D60F23A1850700EAC764 /* auricularia_judae3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5FC23A1850600EAC764 /* auricularia_judae3.jpg */; };
+		D731D61023A1850700EAC764 /* auricularia_judae5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5FD23A1850600EAC764 /* auricularia_judae5.jpg */; };
+		D731D61123A1850700EAC764 /* cerioporus_squamosus1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5FE23A1850600EAC764 /* cerioporus_squamosus1.jpg */; };
+		D731D61223A1850700EAC764 /* сoltricia_perennis3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D5FF23A1850700EAC764 /* сoltricia_perennis3.jpg */; };
+		D731D61323A1850700EAC764 /* auricularia_mesenterica5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D60023A1850700EAC764 /* auricularia_mesenterica5.jpg */; };
+		D731D61423A1850700EAC764 /* auricularia_mesenterica1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D60123A1850700EAC764 /* auricularia_mesenterica1.jpg */; };
+		D731D61523A1850700EAC764 /* сoltricia_perennis4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D60223A1850700EAC764 /* сoltricia_perennis4.jpg */; };
+		D731D61623A1850700EAC764 /* auricularia_mesenterica3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D60323A1850700EAC764 /* auricularia_mesenterica3.jpg */; };
+		D731D61C23A185E700EAC764 /* discina_ancilis5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D61723A185E700EAC764 /* discina_ancilis5.jpg */; };
+		D731D61D23A185E700EAC764 /* discina_ancilis4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D61823A185E700EAC764 /* discina_ancilis4.jpg */; };
+		D731D61E23A185E700EAC764 /* discina_ancilis3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D61923A185E700EAC764 /* discina_ancilis3.jpg */; };
+		D731D61F23A185E700EAC764 /* discina_ancilis2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D61A23A185E700EAC764 /* discina_ancilis2.jpg */; };
+		D731D62023A185E700EAC764 /* discina_ancilis1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D61B23A185E700EAC764 /* discina_ancilis1.jpg */; };
+		D731D62623A2C0F000EAC764 /* entoloma_clypeatum1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D62123A2C0F000EAC764 /* entoloma_clypeatum1.jpg */; };
+		D731D62723A2C0F000EAC764 /* entoloma_clypeatum5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D62223A2C0F000EAC764 /* entoloma_clypeatum5.jpg */; };
+		D731D62823A2C0F000EAC764 /* entoloma_clypeatum4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D62323A2C0F000EAC764 /* entoloma_clypeatum4.jpg */; };
+		D731D62923A2C0F000EAC764 /* entoloma_clypeatum3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D62423A2C0F000EAC764 /* entoloma_clypeatum3.jpg */; };
+		D731D62A23A2C0F000EAC764 /* entoloma_clypeatum2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D62523A2C0F000EAC764 /* entoloma_clypeatum2.jpg */; };
+		D731D63123A2C35400EAC764 /* flammulina_velutipes6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D62B23A2C35400EAC764 /* flammulina_velutipes6.jpg */; };
+		D731D63223A2C35400EAC764 /* flammulina_velutipes7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D62C23A2C35400EAC764 /* flammulina_velutipes7.jpg */; };
+		D731D63323A2C35400EAC764 /* flammulina_velutipes2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D62D23A2C35400EAC764 /* flammulina_velutipes2.jpg */; };
+		D731D63423A2C35400EAC764 /* flammulina_velutipes4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D62E23A2C35400EAC764 /* flammulina_velutipes4.jpg */; };
+		D731D63523A2C35400EAC764 /* flammulina_velutipes3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D62F23A2C35400EAC764 /* flammulina_velutipes3.jpg */; };
+		D731D63623A2C35400EAC764 /* flammulina_velutipes5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D63023A2C35400EAC764 /* flammulina_velutipes5.jpg */; };
+		D731D63C23A2C58E00EAC764 /* gyromitra_esculenta3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D63723A2C58E00EAC764 /* gyromitra_esculenta3.jpg */; };
+		D731D63D23A2C58E00EAC764 /* gyromitra_esculenta4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D63823A2C58E00EAC764 /* gyromitra_esculenta4.jpg */; };
+		D731D63E23A2C58E00EAC764 /* gyromitra_esculenta5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D63923A2C58E00EAC764 /* gyromitra_esculenta5.jpg */; };
+		D731D63F23A2C58E00EAC764 /* gyromitra_esculenta1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D63A23A2C58E00EAC764 /* gyromitra_esculenta1.jpg */; };
+		D731D64023A2C58E00EAC764 /* gyromitra_esculenta2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D63B23A2C58E00EAC764 /* gyromitra_esculenta2.jpg */; };
+		D731D64623A2C6B100EAC764 /* gyromitra_gigas4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D64123A2C6B000EAC764 /* gyromitra_gigas4.jpg */; };
+		D731D64723A2C6B100EAC764 /* gyromitra_gigas2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D64223A2C6B000EAC764 /* gyromitra_gigas2.jpg */; };
+		D731D64823A2C6B100EAC764 /* gyromitra_gigas5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D64323A2C6B000EAC764 /* gyromitra_gigas5.jpg */; };
+		D731D64923A2C6B100EAC764 /* gyromitra_gigas1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D64423A2C6B000EAC764 /* gyromitra_gigas1.jpg */; };
+		D731D64A23A2C6B100EAC764 /* gyromitra_gigas3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D64523A2C6B000EAC764 /* gyromitra_gigas3.jpg */; };
+		D731D64C23A2C95A00EAC764 /* boletus_edulis1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D731D64B23A2C95A00EAC764 /* boletus_edulis1.jpg */; };
+		D731D64F23A2CFA600EAC764 /* UIView+CuttCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731D64E23A2CFA600EAC764 /* UIView+CuttCorner.swift */; };
+		D76423D32200E43700CCE0B2 /* NSObject+ObjectDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76423D22200E43700CCE0B2 /* NSObject+ObjectDescription.swift */; };
+		D76423E22203660800CCE0B2 /* boletus_aereus1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D76423D72203660700CCE0B2 /* boletus_aereus1.jpg */; };
+		D76423E32203660800CCE0B2 /* boletus_edulis2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D76423D82203660700CCE0B2 /* boletus_edulis2.jpg */; };
+		D76423E42203660800CCE0B2 /* amanita_muscaria4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D76423D92203660700CCE0B2 /* amanita_muscaria4.jpg */; };
+		D76423E52203660800CCE0B2 /* amanita_muscaria2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D76423DA2203660800CCE0B2 /* amanita_muscaria2.jpg */; };
+		D76423E62203660800CCE0B2 /* boletus_edulis3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D76423DB2203660800CCE0B2 /* boletus_edulis3.jpg */; };
+		D76423E72203660800CCE0B2 /* boletus_edulis4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D76423DC2203660800CCE0B2 /* boletus_edulis4.jpg */; };
+		D76423E82203660800CCE0B2 /* amanita_caesarea4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D76423DD2203660800CCE0B2 /* amanita_caesarea4.jpg */; };
+		D76423E92203660800CCE0B2 /* amanita_caesarea2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D76423DE2203660800CCE0B2 /* amanita_caesarea2.jpg */; };
+		D76423EB2203660800CCE0B2 /* amanita_caesarea3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D76423E02203660800CCE0B2 /* amanita_caesarea3.jpg */; };
+		D76423EC2203660800CCE0B2 /* amanita_muscaria3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D76423E12203660800CCE0B2 /* amanita_muscaria3.jpg */; };
 		D7BD084621EE0A9C00257C8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BD084521EE0A9C00257C8C /* AppDelegate.swift */; };
 		D7BD084B21EE0A9C00257C8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7BD084921EE0A9C00257C8C /* Main.storyboard */; };
 		D7BD084D21EE0A9D00257C8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7BD084C21EE0A9D00257C8C /* Assets.xcassets */; };
@@ -16,6 +112,17 @@
 		D7BD086E21EE1EF100257C8C /* VMImageCaptureRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BD086D21EE1EF100257C8C /* VMImageCaptureRootView.swift */; };
 		D7BD087121EE1F6C00257C8C /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BD087021EE1F6C00257C8C /* Vision.framework */; };
 		D7BD087321EE1F7700257C8C /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BD087221EE1F7700257C8C /* CoreML.framework */; };
+		D7BD096321EF797800257C8C /* VMProductViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BD096221EF797800257C8C /* VMProductViewControllerViewController.swift */; };
+		D7BD096521EF7CD800257C8C /* VMProductRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BD096421EF7CD800257C8C /* VMProductRootView.swift */; };
+		D7BD096721EF7D3400257C8C /* VMMushroomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BD096621EF7D3400257C8C /* VMMushroomModel.swift */; };
+		D7BD096921EF825500257C8C /* MushroomsCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7BD096821EF825500257C8C /* MushroomsCatalog.plist */; };
+		D7BD096E21EF8BF100257C8C /* amanita_phalloides1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7BD096C21EF8BF100257C8C /* amanita_phalloides1.jpg */; };
+		D7BD097421F0FDAA00257C8C /* amanita_caesarea1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7BD097121F0FDAA00257C8C /* amanita_caesarea1.jpg */; };
+		D7BD097521F0FDAA00257C8C /* amanita_muscaria1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7BD097221F0FDAA00257C8C /* amanita_muscaria1.jpg */; };
+		D7BD097621F0FDAA00257C8C /* flammulina_velutipes1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7BD097321F0FDAA00257C8C /* flammulina_velutipes1.jpg */; };
+		D7CA696E23A2F2A400921E9C /* mushroomClassifier16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D7CA696D23A2F2A300921E9C /* mushroomClassifier16.mlmodel */; };
+		D7F2EB3721F8F3500080232C /* VMPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F2EB3521F8F3500080232C /* VMPhotoCollectionViewCell.swift */; };
+		D7F2EB3821F8F3500080232C /* VMPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F2EB3621F8F3500080232C /* VMPhotoCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +136,102 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D731D5A523A17A0B00EAC764 /* amanita_citrina5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_citrina5.jpg; sourceTree = "<group>"; };
+		D731D5A623A17A0B00EAC764 /* amanita_muscaria5.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_muscaria5.JPG; sourceTree = "<group>"; };
+		D731D5A723A17A0B00EAC764 /* morchella6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = morchella6.png; sourceTree = "<group>"; };
+		D731D5A823A17A0B00EAC764 /* amanita_citrina4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_citrina4.jpg; sourceTree = "<group>"; };
+		D731D5AD23A17A2B00EAC764 /* amanita_citrina1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_citrina1.JPG; sourceTree = "<group>"; };
+		D731D5AE23A17A2C00EAC764 /* amanita_citrina3.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_citrina3.JPG; sourceTree = "<group>"; };
+		D731D5AF23A17A2C00EAC764 /* amanita_citrina2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_citrina2.JPG; sourceTree = "<group>"; };
+		D731D5B323A17B5B00EAC764 /* pleurotus3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pleurotus3.jpg; sourceTree = "<group>"; };
+		D731D5B423A17B5B00EAC764 /* morchella7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = morchella7.jpg; sourceTree = "<group>"; };
+		D731D5B523A17B5B00EAC764 /* boletus_aereus2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boletus_aereus2.jpg; sourceTree = "<group>"; };
+		D731D5B623A17B5B00EAC764 /* morchella_steppicola1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = morchella_steppicola1.jpg; sourceTree = "<group>"; };
+		D731D5B723A17B5B00EAC764 /* morchella3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = morchella3.jpg; sourceTree = "<group>"; };
+		D731D5B823A17B5B00EAC764 /* morchella5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = morchella5.jpg; sourceTree = "<group>"; };
+		D731D5B923A17B5C00EAC764 /* boletus2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boletus2.jpg; sourceTree = "<group>"; };
+		D731D5BA23A17B5C00EAC764 /* amanita_pantherina1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_pantherina1.jpg; sourceTree = "<group>"; };
+		D731D5BB23A17B5C00EAC764 /* boletus_aereus6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boletus_aereus6.jpg; sourceTree = "<group>"; };
+		D731D5BC23A17B5C00EAC764 /* amanita_pantherina2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_pantherina2.jpg; sourceTree = "<group>"; };
+		D731D5BD23A17B5C00EAC764 /* morchella2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = morchella2.jpg; sourceTree = "<group>"; };
+		D731D5BE23A17B5C00EAC764 /* boletus_aereus5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boletus_aereus5.jpg; sourceTree = "<group>"; };
+		D731D5BF23A17B5C00EAC764 /* boletus_aereus4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boletus_aereus4.jpg; sourceTree = "<group>"; };
+		D731D5C023A17B5C00EAC764 /* boletus4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boletus4.jpg; sourceTree = "<group>"; };
+		D731D5C123A17B5C00EAC764 /* boletus3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boletus3.jpg; sourceTree = "<group>"; };
+		D731D5C223A17B5C00EAC764 /* morchella1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = morchella1.jpg; sourceTree = "<group>"; };
+		D731D5C323A17B5C00EAC764 /* boletus_aereus3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boletus_aereus3.jpg; sourceTree = "<group>"; };
+		D731D5C423A17B5C00EAC764 /* morchella4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = morchella4.jpg; sourceTree = "<group>"; };
+		D731D5C523A17B5C00EAC764 /* pleurotus1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pleurotus1.jpg; sourceTree = "<group>"; };
+		D731D5C623A17B5C00EAC764 /* amanita_pantherina3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_pantherina3.jpg; sourceTree = "<group>"; };
+		D731D5C723A17B5C00EAC764 /* boletus1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boletus1.jpg; sourceTree = "<group>"; };
+		D731D5C823A17B5C00EAC764 /* amanita_pantherina4.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_pantherina4.JPG; sourceTree = "<group>"; };
+		D731D5C923A17B5C00EAC764 /* pleurotus2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pleurotus2.jpg; sourceTree = "<group>"; };
+		D731D5E123A17DB100EAC764 /* amanita_phalloides3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_phalloides3.jpg; sourceTree = "<group>"; };
+		D731D5E223A17DB100EAC764 /* amanita_phalloides4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_phalloides4.jpg; sourceTree = "<group>"; };
+		D731D5E323A17DB100EAC764 /* amanita_phalloides2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_phalloides2.jpg; sourceTree = "<group>"; };
+		D731D5E723A17EF700EAC764 /* amanita_rubescens2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_rubescens2.jpg; sourceTree = "<group>"; };
+		D731D5E823A17EF800EAC764 /* amanita_rubescens1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_rubescens1.jpg; sourceTree = "<group>"; };
+		D731D5E923A17EF800EAC764 /* amanita_rubescens4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_rubescens4.jpg; sourceTree = "<group>"; };
+		D731D5EA23A17EF800EAC764 /* amanita_rubescens5.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_rubescens5.JPG; sourceTree = "<group>"; };
+		D731D5EB23A17EF800EAC764 /* amanita_rubescens3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_rubescens3.jpg; sourceTree = "<group>"; };
+		D731D5F123A1850600EAC764 /* auricularia_judae1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = auricularia_judae1.jpg; sourceTree = "<group>"; };
+		D731D5F223A1850600EAC764 /* сoltricia_perennis1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "сoltricia_perennis1.jpg"; sourceTree = "<group>"; };
+		D731D5F323A1850600EAC764 /* auricularia_judae2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = auricularia_judae2.jpg; sourceTree = "<group>"; };
+		D731D5F423A1850600EAC764 /* cerioporus_squamosus2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cerioporus_squamosus2.jpg; sourceTree = "<group>"; };
+		D731D5F523A1850600EAC764 /* cerioporus_squamosus3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cerioporus_squamosus3.jpg; sourceTree = "<group>"; };
+		D731D5F623A1850600EAC764 /* auricularia_mesenterica4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = auricularia_mesenterica4.jpg; sourceTree = "<group>"; };
+		D731D5F723A1850600EAC764 /* auricularia_mesenterica2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = auricularia_mesenterica2.jpg; sourceTree = "<group>"; };
+		D731D5F823A1850600EAC764 /* auricularia_judae4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = auricularia_judae4.jpg; sourceTree = "<group>"; };
+		D731D5F923A1850600EAC764 /* cerioporus_squamosus4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cerioporus_squamosus4.jpg; sourceTree = "<group>"; };
+		D731D5FA23A1850600EAC764 /* сoltricia_perennis2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "сoltricia_perennis2.jpg"; sourceTree = "<group>"; };
+		D731D5FB23A1850600EAC764 /* auricularia_judae6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = auricularia_judae6.jpg; sourceTree = "<group>"; };
+		D731D5FC23A1850600EAC764 /* auricularia_judae3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = auricularia_judae3.jpg; sourceTree = "<group>"; };
+		D731D5FD23A1850600EAC764 /* auricularia_judae5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = auricularia_judae5.jpg; sourceTree = "<group>"; };
+		D731D5FE23A1850600EAC764 /* cerioporus_squamosus1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cerioporus_squamosus1.jpg; sourceTree = "<group>"; };
+		D731D5FF23A1850700EAC764 /* сoltricia_perennis3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "сoltricia_perennis3.jpg"; sourceTree = "<group>"; };
+		D731D60023A1850700EAC764 /* auricularia_mesenterica5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = auricularia_mesenterica5.jpg; sourceTree = "<group>"; };
+		D731D60123A1850700EAC764 /* auricularia_mesenterica1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = auricularia_mesenterica1.jpg; sourceTree = "<group>"; };
+		D731D60223A1850700EAC764 /* сoltricia_perennis4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "сoltricia_perennis4.jpg"; sourceTree = "<group>"; };
+		D731D60323A1850700EAC764 /* auricularia_mesenterica3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = auricularia_mesenterica3.jpg; sourceTree = "<group>"; };
+		D731D61723A185E700EAC764 /* discina_ancilis5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = discina_ancilis5.jpg; sourceTree = "<group>"; };
+		D731D61823A185E700EAC764 /* discina_ancilis4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = discina_ancilis4.jpg; sourceTree = "<group>"; };
+		D731D61923A185E700EAC764 /* discina_ancilis3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = discina_ancilis3.jpg; sourceTree = "<group>"; };
+		D731D61A23A185E700EAC764 /* discina_ancilis2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = discina_ancilis2.jpg; sourceTree = "<group>"; };
+		D731D61B23A185E700EAC764 /* discina_ancilis1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = discina_ancilis1.jpg; sourceTree = "<group>"; };
+		D731D62123A2C0F000EAC764 /* entoloma_clypeatum1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = entoloma_clypeatum1.jpg; sourceTree = "<group>"; };
+		D731D62223A2C0F000EAC764 /* entoloma_clypeatum5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = entoloma_clypeatum5.jpg; sourceTree = "<group>"; };
+		D731D62323A2C0F000EAC764 /* entoloma_clypeatum4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = entoloma_clypeatum4.jpg; sourceTree = "<group>"; };
+		D731D62423A2C0F000EAC764 /* entoloma_clypeatum3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = entoloma_clypeatum3.jpg; sourceTree = "<group>"; };
+		D731D62523A2C0F000EAC764 /* entoloma_clypeatum2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = entoloma_clypeatum2.jpg; sourceTree = "<group>"; };
+		D731D62B23A2C35400EAC764 /* flammulina_velutipes6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flammulina_velutipes6.jpg; sourceTree = "<group>"; };
+		D731D62C23A2C35400EAC764 /* flammulina_velutipes7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flammulina_velutipes7.jpg; sourceTree = "<group>"; };
+		D731D62D23A2C35400EAC764 /* flammulina_velutipes2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flammulina_velutipes2.jpg; sourceTree = "<group>"; };
+		D731D62E23A2C35400EAC764 /* flammulina_velutipes4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flammulina_velutipes4.jpg; sourceTree = "<group>"; };
+		D731D62F23A2C35400EAC764 /* flammulina_velutipes3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flammulina_velutipes3.jpg; sourceTree = "<group>"; };
+		D731D63023A2C35400EAC764 /* flammulina_velutipes5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flammulina_velutipes5.jpg; sourceTree = "<group>"; };
+		D731D63723A2C58E00EAC764 /* gyromitra_esculenta3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gyromitra_esculenta3.jpg; sourceTree = "<group>"; };
+		D731D63823A2C58E00EAC764 /* gyromitra_esculenta4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gyromitra_esculenta4.jpg; sourceTree = "<group>"; };
+		D731D63923A2C58E00EAC764 /* gyromitra_esculenta5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gyromitra_esculenta5.jpg; sourceTree = "<group>"; };
+		D731D63A23A2C58E00EAC764 /* gyromitra_esculenta1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gyromitra_esculenta1.jpg; sourceTree = "<group>"; };
+		D731D63B23A2C58E00EAC764 /* gyromitra_esculenta2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gyromitra_esculenta2.jpg; sourceTree = "<group>"; };
+		D731D64123A2C6B000EAC764 /* gyromitra_gigas4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gyromitra_gigas4.jpg; sourceTree = "<group>"; };
+		D731D64223A2C6B000EAC764 /* gyromitra_gigas2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gyromitra_gigas2.jpg; sourceTree = "<group>"; };
+		D731D64323A2C6B000EAC764 /* gyromitra_gigas5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gyromitra_gigas5.jpg; sourceTree = "<group>"; };
+		D731D64423A2C6B000EAC764 /* gyromitra_gigas1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gyromitra_gigas1.jpg; sourceTree = "<group>"; };
+		D731D64523A2C6B000EAC764 /* gyromitra_gigas3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gyromitra_gigas3.jpg; sourceTree = "<group>"; };
+		D731D64B23A2C95A00EAC764 /* boletus_edulis1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boletus_edulis1.jpg; sourceTree = "<group>"; };
+		D731D64E23A2CFA600EAC764 /* UIView+CuttCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CuttCorner.swift"; sourceTree = "<group>"; };
+		D76423D22200E43700CCE0B2 /* NSObject+ObjectDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ObjectDescription.swift"; sourceTree = "<group>"; };
+		D76423D72203660700CCE0B2 /* boletus_aereus1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boletus_aereus1.jpg; sourceTree = "<group>"; };
+		D76423D82203660700CCE0B2 /* boletus_edulis2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boletus_edulis2.jpg; sourceTree = "<group>"; };
+		D76423D92203660700CCE0B2 /* amanita_muscaria4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_muscaria4.jpg; sourceTree = "<group>"; };
+		D76423DA2203660800CCE0B2 /* amanita_muscaria2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_muscaria2.jpg; sourceTree = "<group>"; };
+		D76423DB2203660800CCE0B2 /* boletus_edulis3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boletus_edulis3.jpg; sourceTree = "<group>"; };
+		D76423DC2203660800CCE0B2 /* boletus_edulis4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boletus_edulis4.jpg; sourceTree = "<group>"; };
+		D76423DD2203660800CCE0B2 /* amanita_caesarea4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_caesarea4.jpg; sourceTree = "<group>"; };
+		D76423DE2203660800CCE0B2 /* amanita_caesarea2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_caesarea2.jpg; sourceTree = "<group>"; };
+		D76423E02203660800CCE0B2 /* amanita_caesarea3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_caesarea3.jpg; sourceTree = "<group>"; };
+		D76423E12203660800CCE0B2 /* amanita_muscaria3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_muscaria3.jpg; sourceTree = "<group>"; };
 		D7BD084221EE0A9C00257C8C /* VMMushrooms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VMMushrooms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BD084521EE0A9C00257C8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7BD084A21EE0A9C00257C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,6 +245,17 @@
 		D7BD086D21EE1EF100257C8C /* VMImageCaptureRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMImageCaptureRootView.swift; sourceTree = "<group>"; };
 		D7BD087021EE1F6C00257C8C /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
 		D7BD087221EE1F7700257C8C /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
+		D7BD096221EF797800257C8C /* VMProductViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMProductViewControllerViewController.swift; sourceTree = "<group>"; };
+		D7BD096421EF7CD800257C8C /* VMProductRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMProductRootView.swift; sourceTree = "<group>"; };
+		D7BD096621EF7D3400257C8C /* VMMushroomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMMushroomModel.swift; sourceTree = "<group>"; };
+		D7BD096821EF825500257C8C /* MushroomsCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MushroomsCatalog.plist; sourceTree = "<group>"; };
+		D7BD096C21EF8BF100257C8C /* amanita_phalloides1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_phalloides1.jpg; sourceTree = "<group>"; };
+		D7BD097121F0FDAA00257C8C /* amanita_caesarea1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_caesarea1.jpg; sourceTree = "<group>"; };
+		D7BD097221F0FDAA00257C8C /* amanita_muscaria1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amanita_muscaria1.jpg; sourceTree = "<group>"; };
+		D7BD097321F0FDAA00257C8C /* flammulina_velutipes1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flammulina_velutipes1.jpg; sourceTree = "<group>"; };
+		D7CA696D23A2F2A300921E9C /* mushroomClassifier16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = mushroomClassifier16.mlmodel; sourceTree = "<group>"; };
+		D7F2EB3521F8F3500080232C /* VMPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		D7F2EB3621F8F3500080232C /* VMPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VMPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +278,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D731D64D23A2CF8A00EAC764 /* UIVIew */ = {
+			isa = PBXGroup;
+			children = (
+				D731D64E23A2CFA600EAC764 /* UIView+CuttCorner.swift */,
+			);
+			path = UIVIew;
+			sourceTree = "<group>";
+		};
+		D76423D02200E35000CCE0B2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D731D64D23A2CF8A00EAC764 /* UIVIew */,
+				D76423D12200E36600CCE0B2 /* NSObject */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D76423D12200E36600CCE0B2 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				D76423D22200E43700CCE0B2 /* NSObject+ObjectDescription.swift */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
 		D7BD083921EE0A9C00257C8C = {
 			isa = PBXGroup;
 			children = (
@@ -86,9 +325,12 @@
 		D7BD084421EE0A9C00257C8C /* VMMushrooms */ = {
 			isa = PBXGroup;
 			children = (
+				D7CA696D23A2F2A300921E9C /* mushroomClassifier16.mlmodel */,
 				D7BD086521EE1E3B00257C8C /* AppDelegate */,
 				D7BD086721EE1E6300257C8C /* Models */,
 				D7BD086821EE1E7200257C8C /* GUI */,
+				D76423D02200E35000CCE0B2 /* Extensions */,
+				D7BD096A21EF8A3500257C8C /* Resources */,
 				D7BD086621EE1E5500257C8C /* SupportingFiles */,
 			);
 			path = VMMushrooms;
@@ -118,6 +360,7 @@
 				D7BD084C21EE0A9D00257C8C /* Assets.xcassets */,
 				D7BD085121EE0A9D00257C8C /* Info.plist */,
 				D7BD084E21EE0A9D00257C8C /* LaunchScreen.storyboard */,
+				D7BD096821EF825500257C8C /* MushroomsCatalog.plist */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -125,6 +368,7 @@
 		D7BD086721EE1E6300257C8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D7BD096621EF7D3400257C8C /* VMMushroomModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -132,8 +376,9 @@
 		D7BD086821EE1E7200257C8C /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				D7F2EB3421F8F3270080232C /* PhotoCollectionViewCell */,
 				D7BD086921EE1E8800257C8C /* ImageCaptureViewController */,
-				D7BD086A21EE1EA000257C8C /* ReportViewController */,
+				D7BD086A21EE1EA000257C8C /* ProductViewController */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -147,11 +392,13 @@
 			path = ImageCaptureViewController;
 			sourceTree = "<group>";
 		};
-		D7BD086A21EE1EA000257C8C /* ReportViewController */ = {
+		D7BD086A21EE1EA000257C8C /* ProductViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D7BD096421EF7CD800257C8C /* VMProductRootView.swift */,
+				D7BD096221EF797800257C8C /* VMProductViewControllerViewController.swift */,
 			);
-			path = ReportViewController;
+			path = ProductViewController;
 			sourceTree = "<group>";
 		};
 		D7BD086F21EE1F6C00257C8C /* Frameworks */ = {
@@ -161,6 +408,120 @@
 				D7BD087021EE1F6C00257C8C /* Vision.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7BD096A21EF8A3500257C8C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D731D64423A2C6B000EAC764 /* gyromitra_gigas1.jpg */,
+				D731D64223A2C6B000EAC764 /* gyromitra_gigas2.jpg */,
+				D731D64523A2C6B000EAC764 /* gyromitra_gigas3.jpg */,
+				D731D64123A2C6B000EAC764 /* gyromitra_gigas4.jpg */,
+				D731D64323A2C6B000EAC764 /* gyromitra_gigas5.jpg */,
+				D731D63A23A2C58E00EAC764 /* gyromitra_esculenta1.jpg */,
+				D731D63B23A2C58E00EAC764 /* gyromitra_esculenta2.jpg */,
+				D731D63723A2C58E00EAC764 /* gyromitra_esculenta3.jpg */,
+				D731D63823A2C58E00EAC764 /* gyromitra_esculenta4.jpg */,
+				D731D63923A2C58E00EAC764 /* gyromitra_esculenta5.jpg */,
+				D7BD097321F0FDAA00257C8C /* flammulina_velutipes1.jpg */,
+				D731D62D23A2C35400EAC764 /* flammulina_velutipes2.jpg */,
+				D731D62F23A2C35400EAC764 /* flammulina_velutipes3.jpg */,
+				D731D62E23A2C35400EAC764 /* flammulina_velutipes4.jpg */,
+				D731D63023A2C35400EAC764 /* flammulina_velutipes5.jpg */,
+				D731D62B23A2C35400EAC764 /* flammulina_velutipes6.jpg */,
+				D731D62C23A2C35400EAC764 /* flammulina_velutipes7.jpg */,
+				D731D62123A2C0F000EAC764 /* entoloma_clypeatum1.jpg */,
+				D731D62523A2C0F000EAC764 /* entoloma_clypeatum2.jpg */,
+				D731D62423A2C0F000EAC764 /* entoloma_clypeatum3.jpg */,
+				D731D62323A2C0F000EAC764 /* entoloma_clypeatum4.jpg */,
+				D731D62223A2C0F000EAC764 /* entoloma_clypeatum5.jpg */,
+				D731D61B23A185E700EAC764 /* discina_ancilis1.jpg */,
+				D731D61A23A185E700EAC764 /* discina_ancilis2.jpg */,
+				D731D61923A185E700EAC764 /* discina_ancilis3.jpg */,
+				D731D61823A185E700EAC764 /* discina_ancilis4.jpg */,
+				D731D61723A185E700EAC764 /* discina_ancilis5.jpg */,
+				D731D5F123A1850600EAC764 /* auricularia_judae1.jpg */,
+				D731D5F323A1850600EAC764 /* auricularia_judae2.jpg */,
+				D731D5FC23A1850600EAC764 /* auricularia_judae3.jpg */,
+				D731D5F823A1850600EAC764 /* auricularia_judae4.jpg */,
+				D731D5FD23A1850600EAC764 /* auricularia_judae5.jpg */,
+				D731D5FB23A1850600EAC764 /* auricularia_judae6.jpg */,
+				D731D60123A1850700EAC764 /* auricularia_mesenterica1.jpg */,
+				D731D5F723A1850600EAC764 /* auricularia_mesenterica2.jpg */,
+				D731D60323A1850700EAC764 /* auricularia_mesenterica3.jpg */,
+				D731D5F623A1850600EAC764 /* auricularia_mesenterica4.jpg */,
+				D731D60023A1850700EAC764 /* auricularia_mesenterica5.jpg */,
+				D731D5FE23A1850600EAC764 /* cerioporus_squamosus1.jpg */,
+				D731D5F423A1850600EAC764 /* cerioporus_squamosus2.jpg */,
+				D731D5F523A1850600EAC764 /* cerioporus_squamosus3.jpg */,
+				D731D5F923A1850600EAC764 /* cerioporus_squamosus4.jpg */,
+				D731D5F223A1850600EAC764 /* сoltricia_perennis1.jpg */,
+				D731D5FA23A1850600EAC764 /* сoltricia_perennis2.jpg */,
+				D731D5FF23A1850700EAC764 /* сoltricia_perennis3.jpg */,
+				D731D60223A1850700EAC764 /* сoltricia_perennis4.jpg */,
+				D731D5E823A17EF800EAC764 /* amanita_rubescens1.jpg */,
+				D731D5E723A17EF700EAC764 /* amanita_rubescens2.jpg */,
+				D731D5EB23A17EF800EAC764 /* amanita_rubescens3.jpg */,
+				D731D5E923A17EF800EAC764 /* amanita_rubescens4.jpg */,
+				D731D5EA23A17EF800EAC764 /* amanita_rubescens5.JPG */,
+				D7BD096C21EF8BF100257C8C /* amanita_phalloides1.jpg */,
+				D731D5E323A17DB100EAC764 /* amanita_phalloides2.jpg */,
+				D731D5E123A17DB100EAC764 /* amanita_phalloides3.jpg */,
+				D731D5E223A17DB100EAC764 /* amanita_phalloides4.jpg */,
+				D731D5BA23A17B5C00EAC764 /* amanita_pantherina1.jpg */,
+				D731D5BC23A17B5C00EAC764 /* amanita_pantherina2.jpg */,
+				D731D5C623A17B5C00EAC764 /* amanita_pantherina3.jpg */,
+				D731D5C823A17B5C00EAC764 /* amanita_pantherina4.JPG */,
+				D731D5B523A17B5B00EAC764 /* boletus_aereus2.jpg */,
+				D731D5C323A17B5C00EAC764 /* boletus_aereus3.jpg */,
+				D731D5BF23A17B5C00EAC764 /* boletus_aereus4.jpg */,
+				D731D5BE23A17B5C00EAC764 /* boletus_aereus5.jpg */,
+				D731D5BB23A17B5C00EAC764 /* boletus_aereus6.jpg */,
+				D731D5C723A17B5C00EAC764 /* boletus1.jpg */,
+				D731D5B923A17B5C00EAC764 /* boletus2.jpg */,
+				D731D5C123A17B5C00EAC764 /* boletus3.jpg */,
+				D731D5C023A17B5C00EAC764 /* boletus4.jpg */,
+				D731D5B623A17B5B00EAC764 /* morchella_steppicola1.jpg */,
+				D731D5C223A17B5C00EAC764 /* morchella1.jpg */,
+				D731D5BD23A17B5C00EAC764 /* morchella2.jpg */,
+				D731D5B723A17B5B00EAC764 /* morchella3.jpg */,
+				D731D5C423A17B5C00EAC764 /* morchella4.jpg */,
+				D731D5B823A17B5B00EAC764 /* morchella5.jpg */,
+				D731D5A723A17A0B00EAC764 /* morchella6.png */,
+				D731D5B423A17B5B00EAC764 /* morchella7.jpg */,
+				D731D5C523A17B5C00EAC764 /* pleurotus1.jpg */,
+				D731D5C923A17B5C00EAC764 /* pleurotus2.jpg */,
+				D731D5B323A17B5B00EAC764 /* pleurotus3.jpg */,
+				D731D5AD23A17A2B00EAC764 /* amanita_citrina1.JPG */,
+				D731D5AF23A17A2C00EAC764 /* amanita_citrina2.JPG */,
+				D731D5AE23A17A2C00EAC764 /* amanita_citrina3.JPG */,
+				D731D5A823A17A0B00EAC764 /* amanita_citrina4.jpg */,
+				D731D5A523A17A0B00EAC764 /* amanita_citrina5.jpg */,
+				D7BD097221F0FDAA00257C8C /* amanita_muscaria1.jpg */,
+				D76423DA2203660800CCE0B2 /* amanita_muscaria2.jpg */,
+				D76423E12203660800CCE0B2 /* amanita_muscaria3.jpg */,
+				D76423D92203660700CCE0B2 /* amanita_muscaria4.jpg */,
+				D731D5A623A17A0B00EAC764 /* amanita_muscaria5.JPG */,
+				D7BD097121F0FDAA00257C8C /* amanita_caesarea1.jpg */,
+				D76423DE2203660800CCE0B2 /* amanita_caesarea2.jpg */,
+				D76423E02203660800CCE0B2 /* amanita_caesarea3.jpg */,
+				D76423DD2203660800CCE0B2 /* amanita_caesarea4.jpg */,
+				D76423D72203660700CCE0B2 /* boletus_aereus1.jpg */,
+				D731D64B23A2C95A00EAC764 /* boletus_edulis1.jpg */,
+				D76423D82203660700CCE0B2 /* boletus_edulis2.jpg */,
+				D76423DB2203660800CCE0B2 /* boletus_edulis3.jpg */,
+				D76423DC2203660800CCE0B2 /* boletus_edulis4.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D7F2EB3421F8F3270080232C /* PhotoCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D7F2EB3521F8F3500080232C /* VMPhotoCollectionViewCell.swift */,
+				D7F2EB3621F8F3500080232C /* VMPhotoCollectionViewCell.xib */,
+			);
+			path = PhotoCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,9 +574,11 @@
 				TargetAttributes = {
 					D7BD084121EE0A9C00257C8C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					D7BD085521EE0A9D00257C8C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = D7BD084121EE0A9C00257C8C;
 					};
 				};
@@ -244,9 +607,109 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D731D60A23A1850700EAC764 /* auricularia_mesenterica2.jpg in Resources */,
+				D731D5DA23A17B5C00EAC764 /* boletus_aereus3.jpg in Resources */,
+				D76423E62203660800CCE0B2 /* boletus_edulis3.jpg in Resources */,
+				D731D5D623A17B5C00EAC764 /* boletus_aereus4.jpg in Resources */,
+				D731D5CA23A17B5C00EAC764 /* pleurotus3.jpg in Resources */,
+				D7BD096921EF825500257C8C /* MushroomsCatalog.plist in Resources */,
+				D731D64A23A2C6B100EAC764 /* gyromitra_gigas3.jpg in Resources */,
+				D731D61123A1850700EAC764 /* cerioporus_squamosus1.jpg in Resources */,
+				D731D60623A1850700EAC764 /* auricularia_judae2.jpg in Resources */,
+				D731D61F23A185E700EAC764 /* discina_ancilis2.jpg in Resources */,
+				D731D63E23A2C58E00EAC764 /* gyromitra_esculenta5.jpg in Resources */,
+				D731D64823A2C6B100EAC764 /* gyromitra_gigas5.jpg in Resources */,
+				D731D5CD23A17B5C00EAC764 /* morchella_steppicola1.jpg in Resources */,
+				D731D5D323A17B5C00EAC764 /* amanita_pantherina2.jpg in Resources */,
+				D731D60B23A1850700EAC764 /* auricularia_judae4.jpg in Resources */,
 				D7BD085021EE0A9D00257C8C /* LaunchScreen.storyboard in Resources */,
+				D731D64723A2C6B100EAC764 /* gyromitra_gigas2.jpg in Resources */,
+				D76423E22203660800CCE0B2 /* boletus_aereus1.jpg in Resources */,
+				D731D64623A2C6B100EAC764 /* gyromitra_gigas4.jpg in Resources */,
+				D731D61C23A185E700EAC764 /* discina_ancilis5.jpg in Resources */,
+				D731D5E623A17DB100EAC764 /* amanita_phalloides2.jpg in Resources */,
+				D7BD097421F0FDAA00257C8C /* amanita_caesarea1.jpg in Resources */,
+				D731D5D423A17B5C00EAC764 /* morchella2.jpg in Resources */,
+				D731D62923A2C0F000EAC764 /* entoloma_clypeatum3.jpg in Resources */,
+				D731D5EE23A17EF800EAC764 /* amanita_rubescens4.jpg in Resources */,
+				D76423E32203660800CCE0B2 /* boletus_edulis2.jpg in Resources */,
+				D731D5CC23A17B5C00EAC764 /* boletus_aereus2.jpg in Resources */,
+				D731D61D23A185E700EAC764 /* discina_ancilis4.jpg in Resources */,
+				D76423EB2203660800CCE0B2 /* amanita_caesarea3.jpg in Resources */,
+				D731D60423A1850700EAC764 /* auricularia_judae1.jpg in Resources */,
+				D731D5D923A17B5C00EAC764 /* morchella1.jpg in Resources */,
+				D731D60D23A1850700EAC764 /* сoltricia_perennis2.jpg in Resources */,
+				D731D60923A1850700EAC764 /* auricularia_mesenterica4.jpg in Resources */,
+				D731D5EC23A17EF800EAC764 /* amanita_rubescens2.jpg in Resources */,
+				D731D63623A2C35400EAC764 /* flammulina_velutipes5.jpg in Resources */,
+				D7BD097521F0FDAA00257C8C /* amanita_muscaria1.jpg in Resources */,
+				D731D60723A1850700EAC764 /* cerioporus_squamosus2.jpg in Resources */,
+				D731D60823A1850700EAC764 /* cerioporus_squamosus3.jpg in Resources */,
+				D731D5DE23A17B5C00EAC764 /* boletus1.jpg in Resources */,
+				D7F2EB3821F8F3500080232C /* VMPhotoCollectionViewCell.xib in Resources */,
+				D731D62A23A2C0F000EAC764 /* entoloma_clypeatum2.jpg in Resources */,
+				D731D62623A2C0F000EAC764 /* entoloma_clypeatum1.jpg in Resources */,
+				D731D64C23A2C95A00EAC764 /* boletus_edulis1.jpg in Resources */,
+				D76423E42203660800CCE0B2 /* amanita_muscaria4.jpg in Resources */,
+				D731D5B023A17A2C00EAC764 /* amanita_citrina1.JPG in Resources */,
+				D76423E72203660800CCE0B2 /* boletus_edulis4.jpg in Resources */,
+				D731D61423A1850700EAC764 /* auricularia_mesenterica1.jpg in Resources */,
 				D7BD084D21EE0A9D00257C8C /* Assets.xcassets in Resources */,
+				D731D60F23A1850700EAC764 /* auricularia_judae3.jpg in Resources */,
+				D731D5CE23A17B5C00EAC764 /* morchella3.jpg in Resources */,
+				D731D5A923A17A0B00EAC764 /* amanita_citrina5.jpg in Resources */,
+				D731D5E423A17DB100EAC764 /* amanita_phalloides3.jpg in Resources */,
+				D731D61223A1850700EAC764 /* сoltricia_perennis3.jpg in Resources */,
+				D731D60523A1850700EAC764 /* сoltricia_perennis1.jpg in Resources */,
+				D731D5CB23A17B5C00EAC764 /* morchella7.jpg in Resources */,
+				D731D5DB23A17B5C00EAC764 /* morchella4.jpg in Resources */,
+				D731D62023A185E700EAC764 /* discina_ancilis1.jpg in Resources */,
+				D76423E92203660800CCE0B2 /* amanita_caesarea2.jpg in Resources */,
+				D731D63123A2C35400EAC764 /* flammulina_velutipes6.jpg in Resources */,
+				D731D5AB23A17A0B00EAC764 /* morchella6.png in Resources */,
+				D731D60E23A1850700EAC764 /* auricularia_judae6.jpg in Resources */,
+				D731D63423A2C35400EAC764 /* flammulina_velutipes4.jpg in Resources */,
+				D731D62723A2C0F000EAC764 /* entoloma_clypeatum5.jpg in Resources */,
+				D731D5B123A17A2C00EAC764 /* amanita_citrina3.JPG in Resources */,
+				D731D63F23A2C58E00EAC764 /* gyromitra_esculenta1.jpg in Resources */,
+				D7BD096E21EF8BF100257C8C /* amanita_phalloides1.jpg in Resources */,
+				D731D5DD23A17B5C00EAC764 /* amanita_pantherina3.jpg in Resources */,
+				D731D63D23A2C58E00EAC764 /* gyromitra_esculenta4.jpg in Resources */,
+				D731D5D223A17B5C00EAC764 /* boletus_aereus6.jpg in Resources */,
+				D731D5EF23A17EF800EAC764 /* amanita_rubescens5.JPG in Resources */,
+				D731D5D123A17B5C00EAC764 /* amanita_pantherina1.jpg in Resources */,
+				D731D64023A2C58E00EAC764 /* gyromitra_esculenta2.jpg in Resources */,
+				D731D5CF23A17B5C00EAC764 /* morchella5.jpg in Resources */,
+				D731D5AA23A17A0B00EAC764 /* amanita_muscaria5.JPG in Resources */,
 				D7BD084B21EE0A9C00257C8C /* Main.storyboard in Resources */,
+				D731D61323A1850700EAC764 /* auricularia_mesenterica5.jpg in Resources */,
+				D731D63223A2C35400EAC764 /* flammulina_velutipes7.jpg in Resources */,
+				D731D5E023A17B5C00EAC764 /* pleurotus2.jpg in Resources */,
+				D731D5D023A17B5C00EAC764 /* boletus2.jpg in Resources */,
+				D731D5B223A17A2C00EAC764 /* amanita_citrina2.JPG in Resources */,
+				D731D5D523A17B5C00EAC764 /* boletus_aereus5.jpg in Resources */,
+				D731D5DC23A17B5C00EAC764 /* pleurotus1.jpg in Resources */,
+				D731D60C23A1850700EAC764 /* cerioporus_squamosus4.jpg in Resources */,
+				D7BD097621F0FDAA00257C8C /* flammulina_velutipes1.jpg in Resources */,
+				D731D61E23A185E700EAC764 /* discina_ancilis3.jpg in Resources */,
+				D731D61023A1850700EAC764 /* auricularia_judae5.jpg in Resources */,
+				D731D62823A2C0F000EAC764 /* entoloma_clypeatum4.jpg in Resources */,
+				D731D61523A1850700EAC764 /* сoltricia_perennis4.jpg in Resources */,
+				D731D5DF23A17B5C00EAC764 /* amanita_pantherina4.JPG in Resources */,
+				D731D5D823A17B5C00EAC764 /* boletus3.jpg in Resources */,
+				D731D5AC23A17A0B00EAC764 /* amanita_citrina4.jpg in Resources */,
+				D731D61623A1850700EAC764 /* auricularia_mesenterica3.jpg in Resources */,
+				D731D63523A2C35400EAC764 /* flammulina_velutipes3.jpg in Resources */,
+				D731D64923A2C6B100EAC764 /* gyromitra_gigas1.jpg in Resources */,
+				D76423EC2203660800CCE0B2 /* amanita_muscaria3.jpg in Resources */,
+				D731D63323A2C35400EAC764 /* flammulina_velutipes2.jpg in Resources */,
+				D731D5ED23A17EF800EAC764 /* amanita_rubescens1.jpg in Resources */,
+				D731D5F023A17EF800EAC764 /* amanita_rubescens3.jpg in Resources */,
+				D731D5E523A17DB100EAC764 /* amanita_phalloides4.jpg in Resources */,
+				D731D5D723A17B5C00EAC764 /* boletus4.jpg in Resources */,
+				D731D63C23A2C58E00EAC764 /* gyromitra_esculenta3.jpg in Resources */,
+				D76423E82203660800CCE0B2 /* amanita_caesarea4.jpg in Resources */,
+				D76423E52203660800CCE0B2 /* amanita_muscaria2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +728,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7BD086E21EE1EF100257C8C /* VMImageCaptureRootView.swift in Sources */,
+				D76423D32200E43700CCE0B2 /* NSObject+ObjectDescription.swift in Sources */,
+				D7CA696E23A2F2A400921E9C /* mushroomClassifier16.mlmodel in Sources */,
+				D7BD096521EF7CD800257C8C /* VMProductRootView.swift in Sources */,
+				D731D64F23A2CFA600EAC764 /* UIView+CuttCorner.swift in Sources */,
+				D7F2EB3721F8F3500080232C /* VMPhotoCollectionViewCell.swift in Sources */,
+				D7BD096321EF797800257C8C /* VMProductViewControllerViewController.swift in Sources */,
+				D7BD096721EF7D3400257C8C /* VMMushroomModel.swift in Sources */,
 				D7BD086C21EE1ECF00257C8C /* VMImageCaptureViewController.swift in Sources */,
 				D7BD084621EE0A9C00257C8C /* AppDelegate.swift in Sources */,
 			);
@@ -438,7 +908,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.varvaraMironova.VMMushrooms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -457,7 +927,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.varvaraMironova.VMMushrooms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -477,7 +947,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.varvaraMironova.VMMushroomsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VMMushrooms.app/VMMushrooms";
 			};
@@ -498,7 +968,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.varvaraMironova.VMMushroomsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VMMushrooms.app/VMMushrooms";
 			};

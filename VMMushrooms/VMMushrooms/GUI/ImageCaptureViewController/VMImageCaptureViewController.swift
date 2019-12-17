@@ -48,15 +48,31 @@ class VMImageCaptureViewController: UIViewController, AVCaptureVideoDataOutputSa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupAVCapture()
         
         // setup Vision parts
         setupLayers()
-        //setupVision()
+        setupVision()
         
         // start the capture
         startCaptureSession()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        resultViewShown = false
+    }
+    
+    //MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let productVC = segue.destination as? VMProductViewControllerViewController, segue.identifier == "showProductSegue" {
+            if let productID = sender as? String {
+                productVC.mushroomModel = VMMushroomModel(identifier: productID)
+            }
+        }
     }
     
     //MARK: Private
@@ -119,11 +135,66 @@ class VMImageCaptureViewController: UIViewController, AVCaptureVideoDataOutputSa
         let rect = rootView!.bounds
         detectionOverlay.bounds = rect.insetBy(dx: 20, dy: 20)
         detectionOverlay.position = CGPoint(x: rect.midX, y: rect.midY)
-        detectionOverlay.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 0.2, 0.7])
+        detectionOverlay.borderColor = UIColor(red: 239.0/255.0,
+                                               green: 83.0/255.0,
+                                               blue: 80.0/255.0,
+                                               alpha: 1.0).cgColor
         detectionOverlay.borderWidth = 4.0
         detectionOverlay.cornerRadius = 20
         detectionOverlay.isHidden = true
         rootLayer.addSublayer(detectionOverlay)
+    }
+    
+    @discardableResult
+    func setupVision() -> NSError? {
+        // Setup Vision parts.
+        let error: NSError! = nil
+        
+        // Setup barcode detection.
+        let barcodeDetection = VNDetectBarcodesRequest(completionHandler: { (request, error) in
+            if let results = request.results as? [VNBarcodeObservation] {
+                if let mainBarcode = results.first {
+                    if let payloadString = mainBarcode.payloadStringValue {
+                        self.showProductInfo(payloadString)
+                    }
+                }
+            }
+        })
+        
+        self.analysisRequests = ([barcodeDetection])
+        
+        // Setup a classification request.
+        guard let modelURL = Bundle.main.url(forResource: "mushroomClassifier16", withExtension: "mlmodelc") else {
+            return NSError(domain: "VisionViewController", code: -1, userInfo: [NSLocalizedDescriptionKey: "The model file is missing."])
+        }
+        
+        guard let objectRecognition = createClassificationRequest(modelURL: modelURL) else {
+            return NSError(domain: "VMMimageCaptureViewController", code: -1, userInfo: [NSLocalizedDescriptionKey: "The classification request failed."])
+        }
+        
+        self.analysisRequests.append(objectRecognition)
+        
+        return error
+    }
+    
+    private func createClassificationRequest(modelURL: URL) -> VNCoreMLRequest? {
+        do {
+            let objectClassifier = try VNCoreMLModel(for: MLModel(contentsOf: modelURL))
+            let classificationRequest = VNCoreMLRequest(model: objectClassifier, completionHandler: { (request, error) in
+                if let results = request.results as? [VNClassificationObservation] {
+                    print("\(results.first!.identifier) : \(results.first!.confidence)")
+                    if results.first!.confidence > 0.9 {
+                        self.showProductInfo(results.first!.identifier)
+                    }
+                }
+            })
+            
+            return classificationRequest
+            
+        } catch let error as NSError {
+            print("Model failed to load: \(error).")
+            return nil
+        }
     }
     
     func startCaptureSession() {
@@ -180,6 +251,18 @@ class VMImageCaptureViewController: UIViewController, AVCaptureVideoDataOutputSa
         }
         
         return exifOrientation
+    }
+    
+    fileprivate func showProductInfo(_ identifier: String) {
+        // Perform all UI updates on the main queue.
+        DispatchQueue.main.async(execute: {
+            if self.resultViewShown {
+                return
+            }
+            
+            self.resultViewShown = true
+            self.performSegue(withIdentifier: "showProductSegue", sender: identifier)
+        })
     }
     
     //MARK: AVCaptureVideoDataOutputSampleBufferDelegate
