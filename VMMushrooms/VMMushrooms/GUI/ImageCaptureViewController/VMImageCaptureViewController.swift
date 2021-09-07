@@ -36,7 +36,7 @@ class VMImageCaptureViewController: UIViewController, UICollectionViewDataSource
     private let sessionQueue = DispatchQueue(label: "com.varvaraMironova.VMMushrooms.sessionQueue")
     
     //MARK:- capturing photos
-    @objc dynamic var captureDeviceInput: AVCaptureDeviceInput!
+    @objc dynamic var captureDeviceInput: AVCaptureDeviceInput?
     
     private let photoOutput = AVCapturePhotoOutput()
     private var inProgressPhotoCaptureDelegates = [Int64: VMPhotoCaptureProcessor]()
@@ -197,7 +197,9 @@ class VMImageCaptureViewController: UIViewController, UICollectionViewDataSource
             
             let photoSettings = AVCapturePhotoSettings(format: [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)])
             
-            if self.captureDeviceInput.device.isFlashAvailable {
+            if let captureDeviceInput = self.captureDeviceInput,
+               captureDeviceInput.device.isFlashAvailable
+            {
                 photoSettings.flashMode = .auto
             }
             
@@ -413,26 +415,23 @@ class VMImageCaptureViewController: UIViewController, UICollectionViewDataSource
                         return
                     }
                     
-                    #warning("mock for debugging the next view. Unkomment")
-                    self.showProductInfo("gyromitra_esculenta")
-                    return
-                    //title = "Cannot recognize the mushroom"
+                    title = "Cannot recognize the mushroom"
                 }
                 
                 // show alert
-                DispatchQueue.main.async {[weak self] in
-                    guard let strongSelf = self else { return }
+                DispatchQueue.main.async {[unowned self, unowned rootView] in
                     let alert = UIAlertController(title: title,
                                                   message: "",
                                                   preferredStyle: .alert)
                     let action = UIAlertAction(title: "Continue",
                                                style: .default) { (action) in
-                        guard let rootView = strongSelf.rootView else { return }
-                        rootView.clearImage(animated: true)
+                        if let rootView = rootView {
+                            rootView.clearImage(animated: true)
+                        }
                     }
                     
                     alert.addAction(action)
-                    strongSelf.present(alert, animated: true)
+                    self.present(alert, animated: true)
                 }
             })
             
@@ -498,16 +497,18 @@ class VMImageCaptureViewController: UIViewController, UICollectionViewDataSource
     
     fileprivate func showProductInfo(_ identifier: String) {
         // Perform all UI updates on the main queue.
-        DispatchQueue.main.async(execute: {
+        DispatchQueue.main.async(execute: {[unowned self, unowned rootView] in
             if self.resultViewShown {
                 return
             }
             
-            guard let rootView = self.rootView else { return }
-            rootView.clearImage(animated: false)
+            if let rootView = rootView {
+                rootView.clearImage(animated: false)
+            }
             
             self.resultViewShown = true
-            self.performSegue(withIdentifier: "showProductSegue", sender: identifier)
+            self.performSegue(withIdentifier: "showProductSegue",
+                              sender        : identifier)
         })
     }
     

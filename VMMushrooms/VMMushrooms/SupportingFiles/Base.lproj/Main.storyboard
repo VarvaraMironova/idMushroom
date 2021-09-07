@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nFa-Ws-YT6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nFa-Ws-YT6">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -69,6 +69,7 @@
                                 <gestureRecognizers/>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OFx-6a-Roe" firstAttribute="top" secondItem="eaK-cW-PYq" secondAttribute="bottom" id="3DV-uM-SAX"/>
@@ -85,7 +86,6 @@
                             <constraint firstItem="OFx-6a-Roe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="sjy-tA-WcZ"/>
                             <constraint firstItem="5ZC-0L-PR5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xO6-ZX-JG2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
                             <outlet property="capturedImageView" destination="eaK-cW-PYq" id="zss-4t-b6q"/>
                             <outlet property="photosCollectionView" destination="OFx-6a-Roe" id="cFs-ka-HhQ"/>
@@ -204,7 +204,7 @@
                                 </constraints>
                             </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Wgh-NH-Wnt">
-                                <rect key="frame" x="187.66666666666666" y="305.33333333333331" width="39" height="37"/>
+                                <rect key="frame" x="147" y="316" width="120.33333333333331" height="26.333333333333314"/>
                                 <color key="currentPageIndicatorTintColor" red="0.94117647058823528" green="0.84705882352941175" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="onPageControl:" destination="7y8-b4-sak" eventType="valueChanged" id="LHy-6p-fMi"/>
@@ -237,7 +237,7 @@
                                         <color key="textColor" red="0.23921568630000001" green="0.2901960784" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACCURANCY:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PB-Wu-xFA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACCURACY:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PB-Wu-xFA">
                                         <rect key="frame" x="8" y="24.333333333333371" width="69" height="11.333333333333336"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="69" id="yZV-Gu-1HL"/>
@@ -275,7 +275,7 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyn-gU-OJ6">
-                                <rect key="frame" x="0.0" y="656" width="414" height="616"/>
+                                <rect key="frame" x="0.0" y="636" width="414" height="616"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESCRIPTION:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6O-HI-ioI">
                                         <rect key="frame" x="8" y="24" width="390" height="30"/>
@@ -310,6 +310,7 @@
                                 </connections>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="dpN-4U-aN9"/>
                         <color key="backgroundColor" red="0.77254901960784317" green="0.82745098039215681" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Wpu-0C-b31" firstAttribute="height" secondItem="Zc6-RL-s0K" secondAttribute="height" id="0ao-kv-9DT"/>
@@ -334,12 +335,11 @@
                             <constraint firstItem="oyn-gU-OJ6" firstAttribute="leading" secondItem="dpN-4U-aN9" secondAttribute="leading" id="VFn-Z0-ufZ"/>
                             <constraint firstItem="Zc6-RL-s0K" firstAttribute="height" secondItem="sgd-Ov-VPR" secondAttribute="height" multiplier="60:736" priority="750" id="Yb3-yg-y48"/>
                             <constraint firstItem="ECR-pP-QaT" firstAttribute="trailing" secondItem="dpN-4U-aN9" secondAttribute="trailing" id="ebm-hK-jcx"/>
-                            <constraint firstItem="oyn-gU-OJ6" firstAttribute="top" secondItem="dpN-4U-aN9" secondAttribute="bottom" constant="-80" id="h6e-Dv-Hpo"/>
+                            <constraint firstItem="oyn-gU-OJ6" firstAttribute="top" secondItem="dpN-4U-aN9" secondAttribute="bottom" constant="-100" id="h6e-Dv-Hpo"/>
                             <constraint firstItem="Wgh-NH-Wnt" firstAttribute="centerX" secondItem="sgd-Ov-VPR" secondAttribute="centerX" id="hND-7d-WqY"/>
                             <constraint firstItem="aeI-ZM-gYG" firstAttribute="trailing" secondItem="dpN-4U-aN9" secondAttribute="trailing" id="pRk-Pw-lk1"/>
                             <constraint firstItem="Wpu-0C-b31" firstAttribute="centerY" secondItem="Zc6-RL-s0K" secondAttribute="centerY" id="vJS-l0-tlT"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="dpN-4U-aN9"/>
                         <connections>
                             <outlet property="confusedCollectionView" destination="aeI-ZM-gYG" id="3WN-pu-m8A"/>
                             <outlet property="confusedTitleLabel" destination="PI0-wC-6jJ" id="g7C-aT-7Yp"/>
@@ -498,13 +498,14 @@
                                     <constraint firstAttribute="trailing" secondItem="f8q-WM-7OT" secondAttribute="trailing" constant="8" id="wWS-N2-XP4"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7U-91-Kda">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7U-91-Kda">
                                 <rect key="frame" x="0.0" y="94.000000000000014" width="414" height="248.33333333333337"/>
                                 <connections>
                                     <action selector="onDismissButton:" destination="esF-bJ-Kp5" eventType="touchUpInside" id="dDa-d2-DcG"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="HsV-lR-nAa"/>
                         <color key="backgroundColor" red="0.7725490196" green="0.82745098039999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cnc-J5-7bR" firstAttribute="leading" secondItem="HsV-lR-nAa" secondAttribute="leading" id="9V5-Rf-WE7"/>
@@ -526,7 +527,6 @@
                             <constraint firstItem="g7U-91-Kda" firstAttribute="width" secondItem="JBo-MZ-4eU" secondAttribute="width" id="yKQ-cr-exV"/>
                             <constraint firstItem="JBo-MZ-4eU" firstAttribute="leading" secondItem="HsV-lR-nAa" secondAttribute="leading" id="yXC-k7-TSh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="HsV-lR-nAa"/>
                         <connections>
                             <outlet property="descriptionLabel" destination="f8q-WM-7OT" id="eSE-0i-vIc"/>
                             <outlet property="edibilityLabel" destination="R2x-Qx-iTn" id="jlv-dD-Mi1"/>
