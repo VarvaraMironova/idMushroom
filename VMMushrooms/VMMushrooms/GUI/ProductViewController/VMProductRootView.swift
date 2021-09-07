@@ -15,9 +15,9 @@ enum State : Int {
 
 class VMProductRootView: UIView {
     @IBOutlet var titleLabel        : UILabel!
-    //@IBOutlet var blurView          : UIVisualEffectView!
     @IBOutlet var subtitleLabel     : UILabel!
     @IBOutlet var descriptionLabel  : UILabel!
+    @IBOutlet var pageControl       : UIPageControl!
     
     @IBOutlet var edibilityTitleLabelLabel  : UILabel!
     @IBOutlet var edibilityLabel            : UILabel!
@@ -32,14 +32,7 @@ class VMProductRootView: UIView {
     
     override func awakeFromNib() {
         mushroomImagesCollectionView.register(UINib(nibName: "VMPhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "VMPhotoCollectionViewCell")
-        confusedCollectionView.register(UINib(nibName: "VMPhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "VMPhotoCollectionViewCell")
-    }
-    
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-
-//        expandedView.roundCorner(corner: .Top, radius: 30.0)
-//        expandedView.drawShadow()
+        confusedCollectionView.register(UINib(nibName: "VMTwinModelCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "VMTwinModelCollectionViewCell")
     }
     
     public func fillWithModel (model: VMMushroomModel) {
@@ -47,7 +40,7 @@ class VMProductRootView: UIView {
         subtitleLabel.text = model.latinName
         
         if let edibility = model.edibility {
-            edibilityLabel.text = String(format: "edibility: %@", edibility.rawValue)
+            edibilityLabel.text = String(format: "%@", edibility.rawValue)
         }
         
         descriptionLabel.text = model.mushroomDescription

@@ -20,7 +20,7 @@ enum VMMushroomEdibility: String {
     case edible                 = "edible"
 }
 
-class VMMushroomModel: NSObject {
+struct VMMushroomModel {
     var identifier          : String
     var name                : String!
     var latinName           : String!
@@ -28,17 +28,10 @@ class VMMushroomModel: NSObject {
     
     var edibility           : VMMushroomEdibility!
     
-    var twins  = [VMMushroomModel]()
+    var twins  = [VMTwinModel]()
     var images = [UIImage]()
     
-    let imagesCount = 4
-    
-    deinit {
-        self.name = nil
-        self.latinName = nil
-        self.edibility = nil
-        self.mushroomDescription = nil
-    }
+    let imagesCount = 3
     
     init(identifier: String) {
         self.identifier = identifier
@@ -46,11 +39,18 @@ class VMMushroomModel: NSObject {
         if let path = Bundle.main.path(forResource: "MushroomsCatalog", ofType: "plist") {
             if let productCatalog = NSDictionary(contentsOfFile: path) as? [String: [String: Any]] {
                 if let product = productCatalog[identifier] {
-                    self.name = product["localizedName"] as? String
-                    self.latinName = product["latinName"] as? String
-                    self.mushroomDescription = product["description"] as? String
+                    name = product["localizedName"] as? String
+                    latinName = product["latinName"] as? String
+                    mushroomDescription = product["description"] as? String
+                    edibility = (product["edibility"] as? String).map { VMMushroomEdibility(rawValue: $0)! }
                     
-                    self.edibility = product["edibility"] as? VMMushroomEdibility
+                    if let twins = product["twins"] as? Array<String> {
+                        for twinID in twins {
+                            let twinMushroomModel = VMTwinModel(identifier: twinID)
+                            
+                            self.twins.append(twinMushroomModel)
+                        }
+                    }
                 }
             }
         }
@@ -61,4 +61,5 @@ class VMMushroomModel: NSObject {
             }
         }
     }
+
 }

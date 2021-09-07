@@ -4,8 +4,12 @@
 <dict>
 	<key>amanita_caesarea</key>
 	<dict>
+		<key>twins</key>
+		<array>
+            <string>amanita_muscaria</string>
+        </array>
 		<key>localizedName</key>
-		<string>Caesar&apos;s mushroom</string>
+		<string>Caesaros mushroom</string>
 		<key>latinName</key>
 		<string>Amanita Caesarea</string>
 		<key>edibility</key>
@@ -21,6 +25,10 @@
 		<string>Amanita Citrina</string>
 		<key>edibility</key>
 		<string>not_recommended</string>
+        <key>twins</key>
+        <array>
+            <string>amanita_phalloides</string>
+        </array>
 		<key>description</key>
 		<string>Has a fleshy pale yellow, or sometimes white, cap from 4–10 cm (1.5–4 in) across, covered in irregular patches. The gills and flesh are white. There is a large volva at the base of the 6–8 cm (2.5–3 in) tall stem, which has a clear ring. Amanita citrina is found in deciduous and coniferous woodlands in Autumn in Europe. It is also found in North American oak and pine forests. Not eaten, having a smell of rapeseed or potato.</string>
 	</dict>
@@ -32,6 +40,10 @@
 		<string>Amanita Muscaria</string>
 		<key>edibility</key>
 		<string>psychoactive</string>
+        <key>twins</key>
+        <array>
+            <string>amanita_caesarea</string>
+        </array>
 		<key>description</key>
 		<string>A large, conspicuous mushroom, Amanita muscaria is generally common and numerous where it grows, and is often found in groups with basidiocarps in all stages of development. Fly agaric fruiting bodies emerge from the soil looking like white eggs. After emerging from the ground, the cap is covered with numerous small white to yellow pyramid-shaped warts. These are remnants of the universal veil, a membrane that encloses the entire mushroom when it is still very young. Dissecting the mushroom at this stage reveals a characteristic yellowish layer of skin under the veil, which helps identification. As the fungus grows, the red colour appears through the broken veil and the warts become less prominent; they do not change in size, but are reduced relative to the expanding skin area. The cap changes from globose to hemispherical, and finally to plate-like and flat in mature specimens.[28] Fully grown, the bright red cap is usually around 8–20 cm (3–8 in) in diameter, although larger specimens have been found. The red colour may fade after rain and in older mushrooms.</string>
 	</dict>
@@ -43,6 +55,10 @@
 		<string>Amanita Pantherina</string>
 		<key>edibility</key>
 		<string>poisonous</string>
+        <key>twins</key>
+        <array>
+            <string>amanita_rubescens</string>
+        </array>
 		<key>description</key>
 		<string>The panther cap has a convex, flattening a bit with age cap. Dark brown to slightly red brown covered in thick white scales or ‘warts’ left from the veil of the volva. Gills are white, free of the stem, quite crowded. The skirt does not have the striations or lines that the Blusher or Excelsa have and is smooth although in the photo the skirt is a bit dry and wrinkled but still striation free. Has a definite volva with a ‘gutter’ running around the top edge. Found in most types of woodland, particularly beech.</string>
 	</dict>
@@ -54,6 +70,10 @@
 		<string>Amanita Phalloides</string>
 		<key>edibility</key>
 		<string>deadly</string>
+        <key>twins</key>
+        <array>
+            <string>amanita_citrina</string>
+        </array>
 		<key>description</key>
 		<string>The death cap has a large and imposing epigeous (aboveground) fruiting body (basidiocarp), usually with a pileus (cap) from 5 to 15 cm (2 to 6 in) across, initially rounded and hemispherical, but flattening with age. The color of the cap can be pale-, yellowish-, or olive-green, often paler toward the margins and often paler after rain.</string>
 	</dict>
@@ -65,6 +85,10 @@
 		<string>Amanita Rubescens</string>
 		<key>edibility</key>
 		<string>choice</string>
+        <key>twins</key>
+        <array>
+            <string>amanita_pantherina</string>
+        </array>
 		<key>description</key>
 		<string>Common and available before many other species are out, this is a good eating mushroom but must be cooked before consumption. Great care should be taken identifying this fungi. Cap is flesh coloured to light brown to a darker red/brown sometimes with a yellow flush and covered in off-white to grey scales. Spherical to convex to flat. Gills are white, free of the stem, quite crowded. Can develop red spots where damaged. The skirt is an important identification tool as the top has fine grooves or striations running from the stem out. Young Blushers have an obvious volva but as the mushroom matures the bottom of the stem is bulbous rather than volva like.</string>
 	</dict>
@@ -76,6 +100,9 @@
 		<string>Auricularia auricula-judae</string>
 		<key>edibility</key>
 		<string>choice</string>
+        <key>twins</key>
+        <array>
+        </array>
 		<key>description</key>
 		<string>Juda&apos;s ear is a species of edible Auriculariales fungus found worldwide. The fruiting, translucent, thin body is distinguished by its noticeably ear-like shape and brown colouration. It grows upon wood, especially elder. Very common and can be found year round, usually most abundant in January and February. Its specific epithet is derived from the belief that Judas Iscariot hanged himself from an elder tree. Has not strong but good tasty / smell. Used in Asian style cooking or dried, ground to a fine powder and used as stock.</string>
 	</dict>
@@ -87,6 +114,9 @@
 		<string>Auricularia Mesenterica</string>
 		<key>edibility</key>
 		<string>choice</string>
+        <key>twins</key>
+        <array>
+        </array>
 		<key>description</key>
 		<string>Auricularia mesentericais mainly seen in summer and autumn. It occurs most commonly on dead elm trees and on fallen elm trunks and branches.\nBracket-like but attached only loosely to the host timber, the fruitbodies start off as pale rubbery buttons but expand to typically 3 to 7cm across, often merging into compound structures sometimes running along fallen trunks and branches for more than a metre. The upper (infertile) surface of the lobed fruitbody is downy or hairy and zoned in various concentric bands of purple, brown, ochre, grey and white. Has not distinctive testy.</string>
 	</dict>
@@ -98,6 +128,9 @@
 		<string>Cerioporus Squamosus</string>
 		<key>edibility</key>
 		<string>edible_inedible</string>
+        <key>twins</key>
+        <array>
+        </array>
 		<key>description</key>
 		<string>Cerioporus Squamosus is commonly attached to dead logs or stumps at one point with a thick stem. Generally, the fruit body is 8–30 cm (3–12 in) across and up to 10 cm (4 in) thick. The body can be yellow to brown and has &quot;squamules&quot; or scales on its upper side. On the underside one can see the pores that are characteristic of the genus Cerioporus; they are made up of tubes packed together closely. The tubes are between 1 and 12 mm long. The stalk is thick and short, up to 5 cm (2.0 in) long. They can be found alone, in clusters of two or three, or forming shelves. Young specimens are soft but toughen with age.</string>
 	</dict>
@@ -109,6 +142,9 @@
 		<string>Сoltricia Perennis</string>
 		<key>edibility</key>
 		<string>inedible</string>
+        <key>twins</key>
+        <array>
+        </array>
 		<key>description</key>
 		<string>Tiger&apos;s Eye localised in areas of pine woods and plantations. Growing alone or in small groups under hardwoods in packed soil, often along paths and roadways; infrequently on deadwood. Cap 1-5 cm, more or less round in outline, flat or vase-shaped, dry, silky-shiny when fresh, cinnamon brown, usually with concentric bands of colors. The margin straight and thin, sometimes eroding in age.</string>
 	</dict>
@@ -120,6 +156,9 @@
 		<string>Gyromitra Ancilis</string>
 		<key>edibility</key>
 		<string>edible</string>
+        <key>twins</key>
+        <array>
+        </array>
 		<key>description</key>
 		<string>Gyromitra ancilis can actually get quite large, up to about 8cm across and has a rich red brown colour. It forms irregular cups or discs on dead conifer wood in the spring. Growing in the soil around an old conifer stump, found associated with the dead wood of conifers.</string>
 	</dict>
@@ -131,6 +170,9 @@
 		<string>Entoloma Clypeatum</string>
 		<key>edibility</key>
 		<string>suspect</string>
+        <key>twins</key>
+        <array>
+        </array>
 		<key>description</key>
 		<string>Shield pinkgill is fairly common under trees of the family Rosaceae in open woodlands and in parkland. The greyish-brown to dark brown cap is initially convex, then flattened with a broad umbo, and features faint radiating lines. The contrasting white stem is tinted with the cap colour and has fine streaky white markings. The gills are initially pale grey, and mature to pale pink. Cap 3.5-10 cm.</string>
 	</dict>
@@ -142,6 +184,12 @@
 		<string>Flammulina Velutipes</string>
 		<key>edibility</key>
 		<string>choice</string>
+        <key>twins</key>
+        <array>
+            <string>amanita_pantherina</string>
+            <string>entoloma_clypeatum</string>
+            <string>gyromitra_esculenta</string>
+        </array>
 		<key>description</key>
 		<string>Flammulina well known species is fond of cold weather, and usually appears in late fall or winter. It has a sticky, almost rubbery, orangish to reddish or yellowish brown cap, along with a distinctively velvety stem that darkens from the base upward. Stem is pale yellow becoming dark brown to black and velvety with maturity, sometimes keeping a yellow apex. Quite tough. Growing on dead stumps and trunks of deciduous trees, particularly elm. Sometimes found on diseased living trees. Can grow in huge tiers and groups.</string>
 	</dict>
@@ -153,6 +201,9 @@
 		<string>Gyromitra Esculenta</string>
 		<key>edibility</key>
 		<string>deadly</string>
+        <key>twins</key>
+        <array>
+        </array>
 		<key>description</key>
 		<string>Gyromitra esculenta normally fruits in sandy soils under coniferous trees in spring and early summer. The fruiting body, or mushroom, is an irregular brain-shaped cap dark brown in colour that can reach 10 cm (4 in) high and 15 cm (6 in) wide, perched on a stout white stipe up to 6 cm (2.4 in) high. Initially smooth, it becomes progressively more wrinkled as it grows and ages. The cap colour may be various shades of reddish-, chestnut-, purplish-, bay-, dark or sometimes golden-brown.</string>
 	</dict>
@@ -164,6 +215,9 @@
 		<string>Gyromitra Gigas</string>
 		<key>edibility</key>
 		<string>deadly</string>
+        <key>twins</key>
+        <array>
+        </array>
 		<key>description</key>
 		<string>Gyromitra esculenta normally fruits in sandy soils under coniferous trees in spring and early summer. The fruiting body, or mushroom, is an irregular brain-shaped cap dark brown in colour that can reach 10 cm (4 in) high and 15 cm (6 in) wide, perched on a stout white stipe up to 6 cm (2.4 in) high. Initially smooth, it becomes progressively more wrinkled as it grows and ages. The cap colour may be various shades of reddish-, chestnut-, purplish-, bay-, dark or sometimes golden-brown.</string>
 	</dict>
@@ -175,6 +229,9 @@
 		<string>Boletus Edulis</string>
 		<key>edibility</key>
 		<string>choice</string>
+        <key>twins</key>
+        <array>
+        </array>
 		<key>description</key>
 		<string>The cap of this mushroom is 7–30 cm (2.8–11.8 in) broad at maturity. Slightly sticky to touch, it is convex in shape when young and flattens with age. The colour is generally reddish-brown fading to white in areas near the margin, and continues to darken as it matures.</string>
 	</dict>

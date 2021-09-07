@@ -9,54 +9,151 @@
 import UIKit
 import AVFoundation
 import Vision
+import Photos
 
-class VMImageCaptureViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+class VMImageCaptureViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate
+{
+    
     weak private var rootView: VMImageCaptureRootView? {
         return viewIfLoaded as? VMImageCaptureRootView
     }
     
-    // Vision
+    //store captured photos for recognizing
+    private var photos = [CVPixelBuffer]()
+    
+    //MARK:- capture pjotos session management
+    private enum SessionSetupResult {
+        case success
+        case notAuthorized
+        case configurationFailed
+    }
+    
+    private let session = AVCaptureSession()
+    
+    private var isSessionRunning = false
+    private var setupResult: SessionSetupResult = .success
+    
+    private let sessionQueue = DispatchQueue(label: "com.varvaraMironova.VMMushrooms.sessionQueue")
+    
+    //MARK:- capturing photos
+    @objc dynamic var captureDeviceInput: AVCaptureDeviceInput!
+    
+    private let photoOutput = AVCapturePhotoOutput()
+    private var inProgressPhotoCaptureDelegates = [Int64: VMPhotoCaptureProcessor]()
+    
+    var windowOrientation = UIApplication.shared.statusBarOrientation
+    
+    //MARK:- Vision
     private var analysisRequests = [VNRequest]()
     private let sequenceRequestHandler = VNSequenceRequestHandler()
     
-    // Registration history
+    // Queue for dispatching vision classification and barcode requests
+    private let visionQueue = DispatchQueue(label: "com.varvaraMironova.VMMushrooms.serialVisionQueue")
+    
+    //MARK:- Registration history
     private let maximumHistoryLength = 15
     private var transpositionHistoryPoints: [CGPoint] = [ ]
     private var previousPixelBuffer: CVPixelBuffer?
-    
-    var rootLayer: CALayer! = nil
     
     private var detectionOverlay: CALayer! = nil
     
     // The current pixel buffer undergoing analysis. Run requests in a serial fashion, one after another.
     private var currentlyAnalyzedPixelBuffer: CVPixelBuffer?
     
-    // Queue for dispatching vision classification and barcode requests
-    private let visionQueue = DispatchQueue(label: "com.example.apple-samplecode.FlowerShop.serialVisionQueue")
-    
     var resultViewShown = false
     
-    private var previewLayer: AVCaptureVideoPreviewLayer! = nil
-    
-    private let session = AVCaptureSession()
-    
-    private let videoDataOutput = AVCaptureVideoDataOutput()
-    
-    private let videoDataOutputQueue = DispatchQueue(label: "VideoDataOutput", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
-    
-    //MARK: View Life Cicle
-
+    //MARK:- View Life Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupAVCapture()
+        guard let rootView = rootView, let previewView = rootView.previewView else { return }
         
-        // setup Vision parts
-        setupLayers()
-        setupVision()
+        previewView.session = session
         
-        // start the capture
-        startCaptureSession()
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            // The user has previously granted access to the camera.
+            break
+            
+        case .notDetermined:
+            /*
+             The user has not yet been presented with the option to grant
+             video access. Suspend the session queue to delay session
+             setup until the access request has completed.
+             */
+            sessionQueue.suspend()
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: { granted in
+                if !granted {
+                    self.setupResult = .notAuthorized
+                }
+                
+                self.sessionQueue.resume()
+            })
+            
+            break
+            
+        default:
+            // The user has previously denied access.
+            setupResult = .notAuthorized
+            
+            break
+        }
+        
+        sessionQueue.async {
+            self.setupAVCaptureSession()
+        }
+        
+        visionQueue.async {
+            self.setupVision()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        sessionQueue.async {
+            switch self.setupResult {
+            case .success:
+                // Only setup observers and start the session if setup succeeded.
+                self.subscribeNotifications()
+                self.startCaptureSession()
+                self.isSessionRunning = self.session.isRunning
+                
+            case .notAuthorized:
+                DispatchQueue.main.async {
+                    let changePrivacySetting = "AVCam doesn't have permission to use the camera, please change privacy settings"
+                    let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to the camera")
+                    let alertController = UIAlertController(title: "AVCam", message: message, preferredStyle: .alert)
+                    
+                    alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
+                                                            style: .cancel,
+                                                            handler: nil))
+                    
+                    alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"),
+                                                            style: .`default`,
+                                                            handler: { _ in
+                                                                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
+                                                                                          options: [:],
+                                                                                          completionHandler: nil)
+                    }))
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                
+            case .configurationFailed:
+                DispatchQueue.main.async {
+                    let alertMsg = "Alert message when something goes wrong during capture session configuration"
+                    let message = NSLocalizedString("Unable to capture media", comment: alertMsg)
+                    let alertController = UIAlertController(title: "AVCam", message: message, preferredStyle: .alert)
+                    
+                    alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
+                                                            style: .cancel,
+                                                            handler: nil))
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,84 +162,209 @@ class VMImageCaptureViewController: UIViewController, AVCaptureVideoDataOutputSa
         resultViewShown = false
     }
     
-    //MARK: Navigation
+    override func viewWillDisappear(_ animated: Bool) {
+        sessionQueue.async {
+            if self.setupResult == .success {
+                self.session.stopRunning()
+                self.unsubscribeNotifications()
+                self.isSessionRunning = self.session.isRunning
+            }
+        }
+        
+        super.viewWillDisappear(animated)
+    }
     
+    //MARK:- Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let productVC = segue.destination as? VMProductViewControllerViewController, segue.identifier == "showProductSegue" {
+        if let productVC = segue.destination as? VMProductViewController, segue.identifier == "showProductSegue" {
             if let productID = sender as? String {
                 productVC.mushroomModel = VMMushroomModel(identifier: productID)
             }
         }
     }
     
-    //MARK: Private
-    
-    func setupAVCapture() {
-        var deviceInput: AVCaptureDeviceInput!
+    //MARK:- Interface Handlers
+    @IBAction func onTakePhotoButton(_ sender: Any) {
+        guard let rootView = rootView, let previewView = rootView.previewView
+        else { return }
         
-        // Select a video device and make an input.
-        let videoDevice = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .back).devices.first
-        do {
-            deviceInput = try AVCaptureDeviceInput(device: videoDevice!)
-        } catch {
-            print("Could not create video device input: \(error).")
+        let videoPreviewLayerOrientation = previewView.videoPreviewLayer.connection?.videoOrientation
+        
+        sessionQueue.async {
+            if let photoOutputConnection = self.photoOutput.connection(with: .video) {
+                photoOutputConnection.videoOrientation = videoPreviewLayerOrientation!
+            }
+            
+            let photoSettings = AVCapturePhotoSettings(format: [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)])
+            
+            if self.captureDeviceInput.device.isFlashAvailable {
+                photoSettings.flashMode = .auto
+            }
+            
+            let photoCaptureProcessor = VMPhotoCaptureProcessor(with: photoSettings, willCapturePhotoAnimation: {
+                // Flash the screen to signal that AVCam took a photo.
+                DispatchQueue.main.async {
+                    previewView.videoPreviewLayer.opacity = 0
+                    
+                    UIView.animate(withDuration: 0.25) {
+                        previewView.videoPreviewLayer.opacity = 1
+                    }
+                }
+            }, completionHandler: { (photoCaptureProcessor, error) in
+                // When the capture is complete, remove a reference to the photo capture delegate so it can be deallocated.
+                #warning("Handle error!")
+                self.sessionQueue.async {[weak self] in
+                    guard let strongSelf = self else { return }
+                    if let pixelBuffer = photoCaptureProcessor.pixelBuffer {
+                        if let image = photoCaptureProcessor.photo {
+                            strongSelf.currentlyAnalyzedPixelBuffer = pixelBuffer
+                            strongSelf.analyzeCurrentImage()
+                            
+                            DispatchQueue.main.async {
+                                rootView.fill(image: image)
+                            }
+                        }
+                    }
+                    
+                    strongSelf.inProgressPhotoCaptureDelegates[photoCaptureProcessor.requestedPhotoSettings.uniqueID] = nil
+                }
+            }, photoProcessingHandler: { animate in
+                // Animates a spinner while photo is processing
+                if animate {
+                    rootView.showLoadingView()
+                } else {
+                    rootView.hideLoadingView()
+                }
+            }
+            )
+            
+            // The photo output holds a weak reference to the photo capture delegate and stores it in an array to maintain a strong reference.
+            self.inProgressPhotoCaptureDelegates[photoCaptureProcessor.requestedPhotoSettings.uniqueID] = photoCaptureProcessor
+            self.photoOutput.capturePhoto(with: photoSettings, delegate: photoCaptureProcessor)
+        }
+    }
+    
+    @objc func onRemovePhoto(_ sender: UIButton) {
+        let index = sender.tag - 1
+        
+        if let rootView = rootView, let collectionView = rootView.photosCollectionView, index >= 0, index < photos.count {
+            photos.remove(at: index)
+            
+            collectionView.reloadData()
+        }
+    }
+    
+    //MARK:- UICollectionViewDataSource
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photos.count
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VMRecognizingPhotosCell",
+        for: indexPath) as! VMRecognizingPhotosCell
+        let index = indexPath.row
+        
+        if (photos.count > index) {
+//            let image = photos[index]
+//            
+//            cell.fill(image: image, deleteTarget: self, action: #selector(onRemovePhoto(_:)), tag: index+1)
+        }
+        
+        return cell
+    }
+    
+    //MARK:- UICollectionViewDelegate
+    
+    //MARK:- Private
+    func setupAVCaptureSession() {
+        if setupResult != .success {
             return
         }
         
         session.beginConfiguration()
-        
-        // The model input size is smaller than 640x480, so better resolution won't help us.
         session.sessionPreset = .vga640x480
         
-        // Add a video input.
-        guard session.canAddInput(deviceInput) else {
-            print("Could not add video device input to the session.")
+        // Add video input.
+        do {
+            var defaultVideoDevice: AVCaptureDevice?
+            
+            // Choose the back dual camera, if available, otherwise default to a wide angle camera.
+            if let dualCameraDevice = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back) {
+                defaultVideoDevice = dualCameraDevice
+            } else if let backCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) {
+                // If a rear dual camera is not available, default to the rear wide angle camera.
+                defaultVideoDevice = backCameraDevice
+            }
+            
+            guard let videoDevice = defaultVideoDevice else
+            {
+                print("Default video device is unavailable.")
+                setupResult = .configurationFailed
+                session.commitConfiguration()
+                
+                return
+            }
+            
+            try videoDevice.lockForConfiguration()
+            videoDevice.focusMode = .continuousAutoFocus
+            videoDevice.unlockForConfiguration()
+            
+            guard let rootView = rootView, let previewView = rootView.previewView else
+            {
+                return
+            }
+            
+            let captureDeviceInput = try AVCaptureDeviceInput(device: videoDevice)
+            
+            if session.canAddInput(captureDeviceInput) {
+                session.addInput(captureDeviceInput)
+                self.captureDeviceInput = captureDeviceInput
+                
+                DispatchQueue.main.async {
+                    var initialVideoOrientation: AVCaptureVideoOrientation = .portrait
+                    
+                    if self.windowOrientation != .unknown {
+                        if let videoOrientation = AVCaptureVideoOrientation(rawValue: self.windowOrientation.rawValue) {
+                            initialVideoOrientation = videoOrientation
+                        }
+                    }
+                    
+                    previewView.videoPreviewLayer.connection?.videoOrientation = initialVideoOrientation
+                }
+            } else {
+                print("Couldn't add video device input to the session.")
+                setupResult = .configurationFailed
+                session.commitConfiguration()
+                return
+            }
+        } catch {
+            print("Couldn't create video device input: \(error)")
+            setupResult = .configurationFailed
             session.commitConfiguration()
+            
             return
         }
         
-        session.addInput(deviceInput)
-        
-        if session.canAddOutput(videoDataOutput) {
-            session.addOutput(videoDataOutput)
-            // Add a video data output.
-            videoDataOutput.alwaysDiscardsLateVideoFrames = true
-            videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)]
-            videoDataOutput.setSampleBufferDelegate(self, queue: videoDataOutputQueue)
+        // Add the photo output.
+        if session.canAddOutput(photoOutput) {
+            session.addOutput(photoOutput)
+            photoOutput.isHighResolutionCaptureEnabled = true
         } else {
-            print("Could not add video data output to the session.")
+            print("Could not add photo output to the session")
+            setupResult = .configurationFailed
             session.commitConfiguration()
+            
             return
         }
         
-        let captureConnection = videoDataOutput.connection(with: .video)
-        
-        // Always process the frames.
+        let captureConnection = photoOutput.connection(with: .video)
         captureConnection?.isEnabled = true
         
         session.commitConfiguration()
-        
-        previewLayer = AVCaptureVideoPreviewLayer(session: session)
-        previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        rootLayer = rootView!.layer
-        previewLayer.frame = rootLayer.bounds
-        rootLayer.insertSublayer(previewLayer, at: 0)
-    }
-    
-    func setupLayers() {
-        detectionOverlay = CALayer()
-        
-        let rect = rootView!.bounds
-        detectionOverlay.bounds = rect.insetBy(dx: 20, dy: 20)
-        detectionOverlay.position = CGPoint(x: rect.midX, y: rect.midY)
-        detectionOverlay.borderColor = UIColor(red: 239.0/255.0,
-                                               green: 83.0/255.0,
-                                               blue: 80.0/255.0,
-                                               alpha: 1.0).cgColor
-        detectionOverlay.borderWidth = 4.0
-        detectionOverlay.cornerRadius = 20
-        detectionOverlay.isHidden = true
-        rootLayer.addSublayer(detectionOverlay)
     }
     
     @discardableResult
@@ -181,11 +403,33 @@ class VMImageCaptureViewController: UIViewController, AVCaptureVideoDataOutputSa
         do {
             let objectClassifier = try VNCoreMLModel(for: MLModel(contentsOf: modelURL))
             let classificationRequest = VNCoreMLRequest(model: objectClassifier, completionHandler: { (request, error) in
+                var title = "There is no mushroom on the photo"
+                
                 if let results = request.results as? [VNClassificationObservation] {
                     print("\(results.first!.identifier) : \(results.first!.confidence)")
-                    if results.first!.confidence > 0.9 {
+                    if results.first!.confidence > 0.85 {
                         self.showProductInfo(results.first!.identifier)
+                        
+                        return
                     }
+                    
+                    title = "Cannot recognize the mushroom"
+                }
+                
+                // show alert
+                DispatchQueue.main.async {[weak self] in
+                    guard let strongSelf = self else { return }
+                    let alert = UIAlertController(title: title,
+                                                  message: "",
+                                                  preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Continue",
+                                               style: .default) { (action) in
+                        guard let rootView = strongSelf.rootView else { return }
+                        rootView.clearImage(animated: true)
+                    }
+                    
+                    alert.addAction(action)
+                    strongSelf.present(alert, animated: true)
                 }
             })
             
@@ -197,20 +441,16 @@ class VMImageCaptureViewController: UIViewController, AVCaptureVideoDataOutputSa
         }
     }
     
-    func startCaptureSession() {
+    private func startCaptureSession() {
         session.startRunning()
     }
     
-    // Clean up capture setup.
-    func teardownAVCapture() {
-        previewLayer.removeFromSuperlayer()
-        previewLayer = nil
-    }
-    
     private func showDetectionOverlay(_ visible: Bool) {
+        guard let rootView = rootView, let previewView = rootView.previewView
+        else { return }
+        
         DispatchQueue.main.async(execute: {
-            // perform all the UI updates on the main queue
-            self.detectionOverlay.isHidden = !visible
+            visible ? previewView.showDetectionOberlay() : previewView.hideDetectionOberlay()
         })
     }
     
@@ -260,19 +500,148 @@ class VMImageCaptureViewController: UIViewController, AVCaptureVideoDataOutputSa
                 return
             }
             
+            guard let rootView = self.rootView else { return }
+            rootView.clearImage(animated: false)
+            
             self.resultViewShown = true
             self.performSegue(withIdentifier: "showProductSegue", sender: identifier)
         })
     }
     
-    //MARK: AVCaptureVideoDataOutputSampleBufferDelegate
+    private func subscribeNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(sessionWasInterrupted),
+                                               name: .AVCaptureSessionWasInterrupted,
+                                               object: session)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(sessionInterruptionEnded),
+                                               name: .AVCaptureSessionInterruptionEnded,
+                                               object: session)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(sessionRuntimeError(notification:)),
+                                               name: .AVCaptureSessionRuntimeError,
+                                               object: session)
+    }
     
+    private func unsubscribeNotifications() {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: .AVCaptureSessionInterruptionEnded,
+                                                  object: session)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: .AVCaptureSessionWasInterrupted,
+                                                  object: session)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: .AVCaptureSessionRuntimeError,
+                                                  object: session)
+    }
+    
+    @objc
+    private func sessionWasInterrupted(notification: NSNotification) {
+        if let userInfoValue = notification.userInfo?[AVCaptureSessionInterruptionReasonKey] as AnyObject?,
+            let reasonIntegerValue = userInfoValue.integerValue,
+            let reason = AVCaptureSession.InterruptionReason(rawValue: reasonIntegerValue)
+        {
+            print("Capture session was interrupted with reason \(reason)")
+            
+            var showResumeButton = false
+            if reason == .audioDeviceInUseByAnotherClient || reason == .videoDeviceInUseByAnotherClient {
+                showResumeButton = true
+            } else if reason == .videoDeviceNotAvailableWithMultipleForegroundApps {
+                // Fade-in a label to inform the user that the camera is unavailable.
+            }
+            
+            if showResumeButton {
+                // Fade-in a button to enable the user to try to resume the session running.
+            }
+        }
+    }
+    
+    @objc
+    private func sessionInterruptionEnded(notification: NSNotification) {
+        print("Capture session interruption ended")
+        
+        sessionQueue.async {
+            self.session.startRunning()
+            self.isSessionRunning = self.session.isRunning
+            if !self.session.isRunning {
+                DispatchQueue.main.async {
+                    let message = NSLocalizedString("Unable to resume", comment: "Alert message when unable to resume the session running")
+                    let alertController = UIAlertController(title: "AVCam", message: message, preferredStyle: .alert)
+                    let cancelAction = UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"), style: .cancel, handler: nil)
+                    alertController.addAction(cancelAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    //update rootView if needed
+                }
+            }
+        }
+    }
+    
+    @objc
+    func sessionRuntimeError(notification: NSNotification) {
+        guard let error = notification.userInfo?[AVCaptureSessionErrorKey] as? AVError else { return }
+        
+        print("Capture session runtime error: \(error)")
+        // If media services were reset, and the last start succeeded, restart the session.
+        if error.code == .mediaServicesWereReset {
+            sessionQueue.async {
+                if self.isSessionRunning {
+                    self.session.startRunning()
+                    self.isSessionRunning = self.session.isRunning
+                } else {
+                    DispatchQueue.main.async {
+                        //update rootView if needed
+                    }
+                }
+            }
+        } else {
+            //update rootView if needed
+        }
+    }
+    
+    fileprivate func resetTranspositionHistory() {
+        transpositionHistoryPoints.removeAll()
+    }
+    
+    fileprivate func recordTransposition(_ point: CGPoint) {
+        transpositionHistoryPoints.append(point)
+        
+        if transpositionHistoryPoints.count > maximumHistoryLength {
+            transpositionHistoryPoints.removeFirst()
+        }
+    }
+    
+    fileprivate func sceneStabilityAchieved() -> Bool {
+        // Determine if we have enough evidence of stability.
+        if transpositionHistoryPoints.count == maximumHistoryLength {
+            // Calculate the moving average.
+            var movingAverage: CGPoint = CGPoint.zero
+            
+            for currentPoint in transpositionHistoryPoints {
+                movingAverage.x += currentPoint.x
+                movingAverage.y += currentPoint.y
+            }
+            
+            let distance = abs(movingAverage.x) + abs(movingAverage.y)
+            
+            if distance < 20 {
+                return true
+            }
+        }
+        return false
+    }
+    
+    //MARK:- AVCaptureVideoDataOutputSampleBufferDelegate
     func captureOutput(_ captureOutput: AVCaptureOutput, didDrop didDropSampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection)
     {
         print("The capture output dropped a frame.")
     }
     
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection)
+    func captureOutput(_ output: AVCaptureOutput,
+                       didOutput sampleBuffer: CMSampleBuffer,
+                       from connection: AVCaptureConnection)
     {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
@@ -317,38 +686,4 @@ class VMImageCaptureViewController: UIViewController, AVCaptureVideoDataOutputSa
             showDetectionOverlay(false)
         }
     }
-    
-    
-    fileprivate func resetTranspositionHistory() {
-        transpositionHistoryPoints.removeAll()
-    }
-    
-    fileprivate func recordTransposition(_ point: CGPoint) {
-        transpositionHistoryPoints.append(point)
-        
-        if transpositionHistoryPoints.count > maximumHistoryLength {
-            transpositionHistoryPoints.removeFirst()
-        }
-    }
-    
-    fileprivate func sceneStabilityAchieved() -> Bool {
-        // Determine if we have enough evidence of stability.
-        if transpositionHistoryPoints.count == maximumHistoryLength {
-            // Calculate the moving average.
-            var movingAverage: CGPoint = CGPoint.zero
-            
-            for currentPoint in transpositionHistoryPoints {
-                movingAverage.x += currentPoint.x
-                movingAverage.y += currentPoint.y
-            }
-            
-            let distance = abs(movingAverage.x) + abs(movingAverage.y)
-            
-            if distance < 20 {
-                return true
-            }
-        }
-        return false
-    }
-
 }
