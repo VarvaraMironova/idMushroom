@@ -82,7 +82,7 @@ class VMImageCaptureViewController: UIViewController, UICollectionViewDataSource
              setup until the access request has completed.
              */
             sessionQueue.suspend()
-            AVCaptureDevice.requestAccess(for: .video, completionHandler: { granted in
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: { [unowned self] (granted) in
                 if !granted {
                     self.setupResult = .notAuthorized
                 }
@@ -111,7 +111,7 @@ class VMImageCaptureViewController: UIViewController, UICollectionViewDataSource
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        sessionQueue.async {
+        sessionQueue.async {[unowned self] in
             switch self.setupResult {
             case .success:
                 // Only setup observers and start the session if setup succeeded.
@@ -210,15 +210,14 @@ class VMImageCaptureViewController: UIViewController, UICollectionViewDataSource
                         previewView.videoPreviewLayer.opacity = 1
                     }
                 }
-            }, completionHandler: { (photoCaptureProcessor, error) in
+            }, completionHandler: { [unowned self](photoCaptureProcessor, error) in
                 // When the capture is complete, remove a reference to the photo capture delegate so it can be deallocated.
                 #warning("Handle error!")
-                self.sessionQueue.async {[weak self] in
-                    guard let strongSelf = self else { return }
+                self.sessionQueue.async {
                     if let pixelBuffer = photoCaptureProcessor.pixelBuffer {
                         if let image = photoCaptureProcessor.photo {
-                            strongSelf.currentlyAnalyzedPixelBuffer = pixelBuffer
-                            strongSelf.analyzeCurrentImage()
+                            self.currentlyAnalyzedPixelBuffer = pixelBuffer
+                            self.analyzeCurrentImage()
                             
                             DispatchQueue.main.async {
                                 rootView.fill(image: image)
@@ -226,7 +225,7 @@ class VMImageCaptureViewController: UIViewController, UICollectionViewDataSource
                         }
                     }
                     
-                    strongSelf.inProgressPhotoCaptureDelegates[photoCaptureProcessor.requestedPhotoSettings.uniqueID] = nil
+                    self.inProgressPhotoCaptureDelegates[photoCaptureProcessor.requestedPhotoSettings.uniqueID] = nil
                 }
             }, photoProcessingHandler: { animate in
                 // Animates a spinner while photo is processing
@@ -373,7 +372,7 @@ class VMImageCaptureViewController: UIViewController, UICollectionViewDataSource
         let error: NSError! = nil
         
         // Setup barcode detection.
-        let barcodeDetection = VNDetectBarcodesRequest(completionHandler: { (request, error) in
+        let barcodeDetection = VNDetectBarcodesRequest(completionHandler: { [unowned self](request, error) in
             if let results = request.results as? [VNBarcodeObservation] {
                 if let mainBarcode = results.first {
                     if let payloadString = mainBarcode.payloadStringValue {
@@ -383,7 +382,7 @@ class VMImageCaptureViewController: UIViewController, UICollectionViewDataSource
             }
         })
         
-        self.analysisRequests = ([barcodeDetection])
+        analysisRequests = ([barcodeDetection])
         
         // Setup a classification request.
         guard let modelURL = Bundle.main.url(forResource: "mushroomClassifier16", withExtension: "mlmodelc") else {
@@ -394,7 +393,7 @@ class VMImageCaptureViewController: UIViewController, UICollectionViewDataSource
             return NSError(domain: "VMMimageCaptureViewController", code: -1, userInfo: [NSLocalizedDescriptionKey: "The classification request failed."])
         }
         
-        self.analysisRequests.append(objectRecognition)
+        analysisRequests.append(objectRecognition)
         
         return error
     }
@@ -402,18 +401,22 @@ class VMImageCaptureViewController: UIViewController, UICollectionViewDataSource
     private func createClassificationRequest(modelURL: URL) -> VNCoreMLRequest? {
         do {
             let objectClassifier = try VNCoreMLModel(for: MLModel(contentsOf: modelURL))
-            let classificationRequest = VNCoreMLRequest(model: objectClassifier, completionHandler: { (request, error) in
+            let classificationRequest = VNCoreMLRequest(model: objectClassifier, completionHandler: { [unowned self](request, error) in
                 var title = "There is no mushroom on the photo"
                 
-                if let results = request.results as? [VNClassificationObservation] {
-                    print("\(results.first!.identifier) : \(results.first!.confidence)")
-                    if results.first!.confidence > 0.85 {
-                        self.showProductInfo(results.first!.identifier)
+                if let results = request.results as? [VNClassificationObservation],
+                   let firstResult = results.first {
+                    print("\(firstResult.identifier) : \(firstResult.confidence)")
+                    if firstResult.confidence > 0.85 {
+                        self.showProductInfo(firstResult.identifier)
                         
                         return
                     }
                     
-                    title = "Cannot recognize the mushroom"
+                    #warning("mock for debugging the next view. Unkomment")
+                    self.showProductInfo("gyromitra_esculenta")
+                    return
+                    //title = "Cannot recognize the mushroom"
                 }
                 
                 // show alert
